@@ -7,17 +7,31 @@
 //
 
 import UIKit
+import TSGServiceClient
 
 class SocialListViewController: UIViewController {
     
-    let socialList = ["Facebook","Twitter"]
+    let socialList = ["Facebook","Twitter","Instagram","Linkedin","Google"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.automaticallyAdjustsScrollViewInsets = false
         // Do any additional setup after loading the view.
-    }
+        
+//        let queryParam = ["access_token":"3314177362.5a3f599.0129421c607545d3902fcc3fb31826a0"]
+//        
+//        let tempDict:NSMutableDictionary = NSMutableDictionary()
+//        tempDict.setValue("3314177362", forKey: "user-id")
 
+//        TSGServiceManager.performAction("5759249a62c18b953cf00e7f", withQueryParam: queryParam, withPathParams: tempDict, onSuccess: { (object) in
+//            
+//            print(object)
+//            }) { (bool, error) in
+//                print(error)
+//   
+//        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -54,23 +68,41 @@ extension SocialListViewController:UITableViewDataSource, UITableViewDelegate {
         
         let socialFeautreObj = self.storyboard?.instantiateViewControllerWithIdentifier("SocialFeatures") as? SocialFeatures
         
+        //let instagramLogin = self.storyboard?.instantiateViewControllerWithIdentifier("InstagramView") as! InstagramViewController
+        
         switch indexPath.row {
             
         case SocialPlatformName.FACEBOOK.hashValue:
             socialFeautreObj?.socialPlatform = SocialPlatformName.FACEBOOK
+            self.navigationController?.pushViewController(socialFeautreObj!, animated: true)
+
             break
             
         case SocialPlatformName.LINKEDIN.hashValue:
             socialFeautreObj?.socialPlatform = SocialPlatformName.LINKEDIN
+            self.navigationController?.pushViewController(socialFeautreObj!, animated: true)
+
+            break
+         
+        case SocialPlatformName.INSTAGRAM.hashValue:
+            socialFeautreObj?.socialPlatform = SocialPlatformName.INSTAGRAM
+            //self.navigationController?.pushViewController(instagramLogin, animated: true)
+            self.navigationController?.pushViewController(socialFeautreObj!, animated: true)
+
             break
             
         case SocialPlatformName.TWITTER.hashValue:
             socialFeautreObj?.socialPlatform = SocialPlatformName.TWITTER
+            self.navigationController?.pushViewController(socialFeautreObj!, animated: true)
+
             break
-            
+        case SocialPlatformName.GOOGLE.hashValue:
+
+            socialFeautreObj?.socialPlatform = SocialPlatformName.GOOGLE
+            self.navigationController?.pushViewController(socialFeautreObj!, animated: true)
+
         default:
             break
         }
-        self.navigationController?.pushViewController(socialFeautreObj!, animated: true)
     }
 }

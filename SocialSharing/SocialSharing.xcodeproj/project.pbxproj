@@ -14,14 +14,28 @@
 		D613742D1D06B7F50012CA74 /* SocialListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61374291D06B7F50012CA74 /* SocialListViewController.swift */; };
 		D61374321D06B8540012CA74 /* TSGFacebookManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D613742F1D06B8540012CA74 /* TSGFacebookManager.swift */; };
 		D61374331D06B8540012CA74 /* TSGTwitterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61374311D06B8540012CA74 /* TSGTwitterManager.swift */; };
+		D614D2111D0AEBEC001FFD77 /* LinkedinManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D614D2101D0AEBEC001FFD77 /* LinkedinManager.swift */; };
 		D61577211D0038FB0047207C /* PersistentDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61577201D0038FB0047207C /* PersistentDataManager.swift */; };
 		D61577291D0059EC0047207C /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61577281D0059EC0047207C /* Enum.swift */; };
+		D6157A731D0E885200565342 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6157A721D0E885200565342 /* Twitter.framework */; };
+		D616537A1D0AB318003C1BAB /* flower.png in Resources */ = {isa = PBXBuildFile; fileRef = D61653791D0AB318003C1BAB /* flower.png */; };
+		D616537C1D0AB437003C1BAB /* IMG_4301.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D616537B1D0AB437003C1BAB /* IMG_4301.jpg */; };
+		D616537E1D0AD5F0003C1BAB /* SocialFeatures-Extension(Linkedin).swift in Sources */ = {isa = PBXBuildFile; fileRef = D616537D1D0AD5F0003C1BAB /* SocialFeatures-Extension(Linkedin).swift */; };
+		D6195EFC1D09E93000293139 /* SocialFeatures-Extension(Instagram).swift in Sources */ = {isa = PBXBuildFile; fileRef = D6195EFB1D09E93000293139 /* SocialFeatures-Extension(Instagram).swift */; };
+		D61DED541D08076B0004B0BB /* api_validation.json in Resources */ = {isa = PBXBuildFile; fileRef = D61DED531D08076B0004B0BB /* api_validation.json */; };
+		D61DED551D0807EB0004B0BB /* TSGServiceClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D61DED511D0806810004B0BB /* TSGServiceClient.framework */; };
+		D61DED561D0807EB0004B0BB /* TSGServiceClient.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D61DED511D0806810004B0BB /* TSGServiceClient.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D654AF9A1CFEEC7C0012E938 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D654AF991CFEEC7C0012E938 /* AppDelegate.swift */; };
 		D654AF9F1CFEEC7C0012E938 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D654AF9D1CFEEC7C0012E938 /* Main.storyboard */; };
 		D654AFA11CFEEC7C0012E938 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D654AFA01CFEEC7C0012E938 /* Assets.xcassets */; };
 		D654AFA41CFEEC7C0012E938 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D654AFA21CFEEC7C0012E938 /* LaunchScreen.storyboard */; };
 		D654AFAF1CFEEC7C0012E938 /* SocialSharingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D654AFAE1CFEEC7C0012E938 /* SocialSharingTests.swift */; };
 		D66CAB591D043D230010139B /* TwitterPostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66CAB581D043D230010139B /* TwitterPostsViewController.swift */; };
+		D66F68141D0C470D005CF8EB /* linkedin-sdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D66F68131D0C470D005CF8EB /* linkedin-sdk.framework */; };
+		D66F68161D0CAB13005CF8EB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D66F68151D0CAB13005CF8EB /* GoogleService-Info.plist */; };
+		D67184B61D0D36A90043C85B /* SocialFeatures-Extension(Google).swift in Sources */ = {isa = PBXBuildFile; fileRef = D67184B51D0D36A90043C85B /* SocialFeatures-Extension(Google).swift */; };
+		D67184B91D0D48030043C85B /* GoogleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67184B81D0D48030043C85B /* GoogleViewController.swift */; };
+		D6873E121D093D3900D7CAAA /* InstagramViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6873E111D093D3900D7CAAA /* InstagramViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +48,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		D61DED571D0807EC0004B0BB /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				D61DED561D0807EB0004B0BB /* TSGServiceClient.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		4BF671F7F33A7E6E55A8EFDF /* Pods_SocialSharing.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SocialSharing.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C76871D20D23F883DB7A43A0 /* Pods-SocialSharing.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialSharing.release.xcconfig"; path = "Pods/Target Support Files/Pods-SocialSharing/Pods-SocialSharing.release.xcconfig"; sourceTree = "<group>"; };
@@ -43,8 +71,17 @@
 		D61374291D06B7F50012CA74 /* SocialListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialListViewController.swift; sourceTree = "<group>"; };
 		D613742F1D06B8540012CA74 /* TSGFacebookManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSGFacebookManager.swift; sourceTree = "<group>"; };
 		D61374311D06B8540012CA74 /* TSGTwitterManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSGTwitterManager.swift; sourceTree = "<group>"; };
+		D614D2101D0AEBEC001FFD77 /* LinkedinManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinkedinManager.swift; sourceTree = "<group>"; };
 		D61577201D0038FB0047207C /* PersistentDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistentDataManager.swift; sourceTree = "<group>"; };
 		D61577281D0059EC0047207C /* Enum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enum.swift; sourceTree = "<group>"; };
+		D6157A721D0E885200565342 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
+		D61653791D0AB318003C1BAB /* flower.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flower.png; sourceTree = "<group>"; };
+		D616537B1D0AB437003C1BAB /* IMG_4301.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_4301.jpg; sourceTree = "<group>"; };
+		D616537D1D0AD5F0003C1BAB /* SocialFeatures-Extension(Linkedin).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SocialFeatures-Extension(Linkedin).swift"; sourceTree = "<group>"; };
+		D6195EFB1D09E93000293139 /* SocialFeatures-Extension(Instagram).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SocialFeatures-Extension(Instagram).swift"; sourceTree = "<group>"; };
+		D61B2C891D0B4F5500464124 /* SocialSharing-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SocialSharing-Bridging-Header.h"; sourceTree = "<group>"; };
+		D61DED511D0806810004B0BB /* TSGServiceClient.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TSGServiceClient.framework; sourceTree = "<group>"; };
+		D61DED531D08076B0004B0BB /* api_validation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = api_validation.json; sourceTree = "<group>"; };
 		D654AF961CFEEC7C0012E938 /* SocialSharing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialSharing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D654AF991CFEEC7C0012E938 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D654AF9E1CFEEC7C0012E938 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -55,6 +92,11 @@
 		D654AFAE1CFEEC7C0012E938 /* SocialSharingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialSharingTests.swift; sourceTree = "<group>"; };
 		D654AFB01CFEEC7C0012E938 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D66CAB581D043D230010139B /* TwitterPostsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterPostsViewController.swift; sourceTree = "<group>"; };
+		D66F68131D0C470D005CF8EB /* linkedin-sdk.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = "linkedin-sdk.framework"; sourceTree = "<group>"; };
+		D66F68151D0CAB13005CF8EB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D67184B51D0D36A90043C85B /* SocialFeatures-Extension(Google).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SocialFeatures-Extension(Google).swift"; sourceTree = "<group>"; };
+		D67184B81D0D48030043C85B /* GoogleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleViewController.swift; sourceTree = "<group>"; };
+		D6873E111D093D3900D7CAAA /* InstagramViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstagramViewController.swift; sourceTree = "<group>"; };
 		F5E21A3B19486C21C5D23175 /* Pods-SocialSharing.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialSharing.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SocialSharing/Pods-SocialSharing.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -63,7 +105,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D6157A731D0E885200565342 /* Twitter.framework in Frameworks */,
+				D66F68141D0C470D005CF8EB /* linkedin-sdk.framework in Frameworks */,
 				2EA03FC7729466BBAADDFF3B /* Pods_SocialSharing.framework in Frameworks */,
+				D61DED551D0807EB0004B0BB /* TSGServiceClient.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,6 +134,7 @@
 		48056EB5268ED047FBAE706D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D6157A721D0E885200565342 /* Twitter.framework */,
 				4BF671F7F33A7E6E55A8EFDF /* Pods_SocialSharing.framework */,
 			);
 			name = Frameworks;
@@ -99,6 +145,9 @@
 			children = (
 				D61374261D06B7F50012CA74 /* SocialFeatures-Extension(Facebook).swift */,
 				D61374271D06B7F50012CA74 /* SocialFeatures-Extension(Twitter).swift */,
+				D6195EFB1D09E93000293139 /* SocialFeatures-Extension(Instagram).swift */,
+				D616537D1D0AD5F0003C1BAB /* SocialFeatures-Extension(Linkedin).swift */,
+				D67184B51D0D36A90043C85B /* SocialFeatures-Extension(Google).swift */,
 				D61374281D06B7F50012CA74 /* SocialFeatures.swift */,
 				D61374291D06B7F50012CA74 /* SocialListViewController.swift */,
 				D66CAB581D043D230010139B /* TwitterPostsViewController.swift */,
@@ -122,9 +171,23 @@
 			path = TwitterManager;
 			sourceTree = "<group>";
 		};
+		D614D20F1D0AEBC7001FFD77 /* LinkedinManager */ = {
+			isa = PBXGroup;
+			children = (
+				D614D2101D0AEBEC001FFD77 /* LinkedinManager.swift */,
+			);
+			path = LinkedinManager;
+			sourceTree = "<group>";
+		};
 		D654AF8D1CFEEC7C0012E938 = {
 			isa = PBXGroup;
 			children = (
+				D616537B1D0AB437003C1BAB /* IMG_4301.jpg */,
+				D61DED531D08076B0004B0BB /* api_validation.json */,
+				D66F68151D0CAB13005CF8EB /* GoogleService-Info.plist */,
+				D61653791D0AB318003C1BAB /* flower.png */,
+				D66F68131D0C470D005CF8EB /* linkedin-sdk.framework */,
+				D61DED511D0806810004B0BB /* TSGServiceClient.framework */,
 				D654AF981CFEEC7C0012E938 /* SocialSharing */,
 				D60EF25A1D0165AF00F878C1 /* Example */,
 				D654AFAD1CFEEC7C0012E938 /* SocialSharingTests */,
@@ -146,6 +209,9 @@
 		D654AF981CFEEC7C0012E938 /* SocialSharing */ = {
 			isa = PBXGroup;
 			children = (
+				D67184B71D0D47E00043C85B /* GoogleManager */,
+				D614D20F1D0AEBC7001FFD77 /* LinkedinManager */,
+				D6873E101D093CB300D7CAAA /* InstagramManager */,
 				D613742E1D06B8540012CA74 /* FacebookManager */,
 				D61374301D06B8540012CA74 /* TwitterManager */,
 				D654AF991CFEEC7C0012E938 /* AppDelegate.swift */,
@@ -155,6 +221,7 @@
 				D654AFA01CFEEC7C0012E938 /* Assets.xcassets */,
 				D654AFA21CFEEC7C0012E938 /* LaunchScreen.storyboard */,
 				D61577201D0038FB0047207C /* PersistentDataManager.swift */,
+				D61B2C891D0B4F5500464124 /* SocialSharing-Bridging-Header.h */,
 			);
 			path = SocialSharing;
 			sourceTree = "<group>";
@@ -166,6 +233,22 @@
 				D654AFB01CFEEC7C0012E938 /* Info.plist */,
 			);
 			path = SocialSharingTests;
+			sourceTree = "<group>";
+		};
+		D67184B71D0D47E00043C85B /* GoogleManager */ = {
+			isa = PBXGroup;
+			children = (
+				D67184B81D0D48030043C85B /* GoogleViewController.swift */,
+			);
+			path = GoogleManager;
+			sourceTree = "<group>";
+		};
+		D6873E101D093CB300D7CAAA /* InstagramManager */ = {
+			isa = PBXGroup;
+			children = (
+				D6873E111D093D3900D7CAAA /* InstagramViewController.swift */,
+			);
+			path = InstagramManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -182,6 +265,7 @@
 				EE3E06F50B4818365CE1A365 /* Embed Pods Frameworks */,
 				C92F7E67FBC9B6F47F944505 /* Copy Pods Resources */,
 				D6EFE6C01D0194CF006E7CD8 /* ShellScript */,
+				D61DED571D0807EC0004B0BB /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -253,9 +337,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D616537A1D0AB318003C1BAB /* flower.png in Resources */,
 				D654AFA41CFEEC7C0012E938 /* LaunchScreen.storyboard in Resources */,
 				D654AFA11CFEEC7C0012E938 /* Assets.xcassets in Resources */,
+				D616537C1D0AB437003C1BAB /* IMG_4301.jpg in Resources */,
 				D654AF9F1CFEEC7C0012E938 /* Main.storyboard in Resources */,
+				D61DED541D08076B0004B0BB /* api_validation.json in Resources */,
+				D66F68161D0CAB13005CF8EB /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,11 +422,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D616537E1D0AD5F0003C1BAB /* SocialFeatures-Extension(Linkedin).swift in Sources */,
+				D67184B91D0D48030043C85B /* GoogleViewController.swift in Sources */,
 				D61374331D06B8540012CA74 /* TSGTwitterManager.swift in Sources */,
 				D61577211D0038FB0047207C /* PersistentDataManager.swift in Sources */,
+				D6873E121D093D3900D7CAAA /* InstagramViewController.swift in Sources */,
+				D6195EFC1D09E93000293139 /* SocialFeatures-Extension(Instagram).swift in Sources */,
 				D613742C1D06B7F50012CA74 /* SocialFeatures.swift in Sources */,
 				D66CAB591D043D230010139B /* TwitterPostsViewController.swift in Sources */,
+				D614D2111D0AEBEC001FFD77 /* LinkedinManager.swift in Sources */,
 				D613742B1D06B7F50012CA74 /* SocialFeatures-Extension(Twitter).swift in Sources */,
+				D67184B61D0D36A90043C85B /* SocialFeatures-Extension(Google).swift in Sources */,
 				D613742A1D06B7F50012CA74 /* SocialFeatures-Extension(Facebook).swift in Sources */,
 				D61374321D06B8540012CA74 /* TSGFacebookManager.swift in Sources */,
 				D613742D1D06B7F50012CA74 /* SocialListViewController.swift in Sources */,
@@ -423,11 +517,12 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE = "b7f70d78-249f-4c67-b401-7dd5da974f5a";
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "SocialSharing/SocialSharing-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -464,10 +559,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PROVISIONING_PROFILE = "b7f70d78-249f-4c67-b401-7dd5da974f5a";
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "SocialSharing/SocialSharing-Bridging-Header.h";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -477,14 +573,23 @@
 			baseConfigurationReference = F5E21A3B19486C21C5D23175 /* Pods-SocialSharing.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Gurvinder Batra (Q3HXH3MWZ2)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Gurvinder Batra (Q3HXH3MWZ2)";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = SocialSharing/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tsg.SocialSharing;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "b7f70d78-249f-4c67-b401-7dd5da974f5a";
+				SWIFT_OBJC_BRIDGING_HEADER = "SocialSharing/SocialSharing-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -493,14 +598,22 @@
 			baseConfigurationReference = C76871D20D23F883DB7A43A0 /* Pods-SocialSharing.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Gurvinder Batra (Q3HXH3MWZ2)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Gurvinder Batra (Q3HXH3MWZ2)";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = SocialSharing/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tsg.SocialSharing;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "b7f70d78-249f-4c67-b401-7dd5da974f5a";
+				SWIFT_OBJC_BRIDGING_HEADER = "SocialSharing/SocialSharing-Bridging-Header.h";
 			};
 			name = Release;
 		};

@@ -11,10 +11,13 @@ import TwitterKit
 
 class TSGTwitterManager {
     
-    /*
-     *	@functionName	: twitterLogin
-     *	@parameters		: viewController : It would be the viewController on which Alert has to show for success and failure
-    * */
+    /* -------------------------------------------------------------------------------------------
+     * A class is written to use the differnt features of Facebook sdk and GraphAPI
+     * eg. Facebook login, Invite Friends, Get User Data, Post etc
+     * It helps to Reduce the line of code in entire application to integrate facbook for using mention features.
+     * —————————————————————————————————————————————-----------------------------------------------*/
+
+    
     
    class func twitterLogin(viewController:UIViewController){
         

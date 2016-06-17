@@ -7,7 +7,7 @@
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
-	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+	<string>com.tsg.SocialSharing</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
@@ -24,6 +24,8 @@
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>fb541366669384344</string>
+				<string>li4940551</string>
+				<string>com.googleusercontent.apps.54698701220-h9l3pgvu7rt8akcbgs0sbl9pbmraqhnf</string>
 			</array>
 		</dict>
 	</array>
@@ -48,6 +50,8 @@
 			</dict>
 		</array>
 	</dict>
+	<key>LIAppId</key>
+	<string>4940551</string>
 	<key>FacebookAppID</key>
 	<string>541366669384344</string>
 	<key>FacebookDisplayName</key>
@@ -58,6 +62,10 @@
 		<string>fb-messenger-api</string>
 		<string>fbauth2</string>
 		<string>fbshareextension</string>
+		<string>instagram</string>
+		<string>linkedin</string>
+		<string>linkedin-sdk2</string>
+		<string>linkedin-sdk</string>
 	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
@@ -84,6 +92,15 @@
 				<key>NSExceptionRequiresForwardSecrecy</key>
 				<false/>
 				<key>NSIncludesSubdomains</key>
+				<true/>
+			</dict>
+			<key>linkedin.com</key>
+			<dict>
+				<key>NSExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+				<key>NSIncludesSubdomains</key>
+				<true/>
+				<key>NSExceptionRequiresForwardSecrecy</key>
 				<true/>
 			</dict>
 		</dict>

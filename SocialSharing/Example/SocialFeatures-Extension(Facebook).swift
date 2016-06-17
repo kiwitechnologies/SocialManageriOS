@@ -8,11 +8,11 @@
 
 import Foundation
 import UIKit
+import Google
 
 extension SocialFeatures {
     
     func getFBFeature(index:Int, viewController:UIViewController){
-        
         switch index {
             
         case 0:
@@ -53,6 +53,7 @@ extension SocialFeatures {
     
     //Mark: Facebook login
     func facebookLogin(){
+    
         
         let permissionArray = ["public_profile","email","user_friends"]
         
