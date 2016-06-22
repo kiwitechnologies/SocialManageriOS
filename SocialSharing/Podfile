@@ -15,10 +15,4 @@ target 'SocialSharing' do
 	pod ‘Google/SignIn’
 	pod 'GoogleAPIClient/Calendar', '~> 1.0.2'
     	pod 'GTMOAuth2', '~> 1.1.0'
-
 end
-
-target 'SocialSharingTests' do
-
-end
-
