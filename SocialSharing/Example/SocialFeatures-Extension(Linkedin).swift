@@ -23,6 +23,8 @@ extension SocialFeatures {
         case 2:
             shareOnLinkedin()
             
+        case 4:
+            linkedinLogOut()
         default:
             break
         }
@@ -30,23 +32,30 @@ extension SocialFeatures {
     
     func linkedInLogin(){
         
-        let instagramLogin = self.storyboard?.instantiateViewControllerWithIdentifier("LinkedinView") as! LinkedinManager
-        instagramLogin.linkedinOption = LinkedinOptions.LINKEDIN_LOGIN
-        self.navigationController?.pushViewController(instagramLogin, animated: true)
-
+        TSGLinkedinManager.linkedINLogin({ (object) in
+            print(object)
+            }, failureBlock: { (error) in
+                print(error)
+            }) { (hasSession) in
+                print("Has already session?: \(hasSession)")
+        }
     }
     
     func getLinkedinUserProfile(){
     
-        let instagramLogin = self.storyboard?.instantiateViewControllerWithIdentifier("LinkedinView") as! LinkedinManager
-        instagramLogin.linkedinOption = LinkedinOptions.LINKEDIN_USER_PROFILE
-        self.navigationController?.pushViewController(instagramLogin, animated: true)        
+        TSGLinkedinManager.linkedInUserProfile({ (object) in
+            print(object)
+            }) { (error) in
+                print(error)
+        }  
     }
     
     func shareOnLinkedin(){
-        
-        let instagramLogin = self.storyboard?.instantiateViewControllerWithIdentifier("LinkedinView") as! LinkedinManager
-        instagramLogin.linkedinOption = LinkedinOptions.LINKEDIN_SHARE
-        self.navigationController?.pushViewController(instagramLogin, animated: true)
+        TSGLinkedinManager.shareOnLinkedin()
+    }
+    
+    func linkedinLogOut(){
+        TSGLinkedinManager.linkedinLogOut()
+       
     }
 }

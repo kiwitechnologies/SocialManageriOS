@@ -7,46 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2EA03FC7729466BBAADDFF3B /* Pods_SocialSharing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BF671F7F33A7E6E55A8EFDF /* Pods_SocialSharing.framework */; };
+		C32530EE391F820A119A89DA /* Pods_SocialSharing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B03195B023524BFBB9BEF91 /* Pods_SocialSharing.framework */; };
 		D613742A1D06B7F50012CA74 /* SocialFeatures-Extension(Facebook).swift in Sources */ = {isa = PBXBuildFile; fileRef = D61374261D06B7F50012CA74 /* SocialFeatures-Extension(Facebook).swift */; };
 		D613742B1D06B7F50012CA74 /* SocialFeatures-Extension(Twitter).swift in Sources */ = {isa = PBXBuildFile; fileRef = D61374271D06B7F50012CA74 /* SocialFeatures-Extension(Twitter).swift */; };
 		D613742C1D06B7F50012CA74 /* SocialFeatures.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61374281D06B7F50012CA74 /* SocialFeatures.swift */; };
 		D613742D1D06B7F50012CA74 /* SocialListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61374291D06B7F50012CA74 /* SocialListViewController.swift */; };
 		D61374321D06B8540012CA74 /* TSGFacebookManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D613742F1D06B8540012CA74 /* TSGFacebookManager.swift */; };
 		D61374331D06B8540012CA74 /* TSGTwitterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61374311D06B8540012CA74 /* TSGTwitterManager.swift */; };
-		D614D2111D0AEBEC001FFD77 /* LinkedinManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D614D2101D0AEBEC001FFD77 /* LinkedinManager.swift */; };
+		D614D2111D0AEBEC001FFD77 /* TSGLinkedinManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D614D2101D0AEBEC001FFD77 /* TSGLinkedinManager.swift */; };
 		D61577211D0038FB0047207C /* PersistentDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61577201D0038FB0047207C /* PersistentDataManager.swift */; };
 		D61577291D0059EC0047207C /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61577281D0059EC0047207C /* Enum.swift */; };
 		D6157A731D0E885200565342 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6157A721D0E885200565342 /* Twitter.framework */; };
-		D616537A1D0AB318003C1BAB /* flower.png in Resources */ = {isa = PBXBuildFile; fileRef = D61653791D0AB318003C1BAB /* flower.png */; };
-		D616537C1D0AB437003C1BAB /* IMG_4301.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D616537B1D0AB437003C1BAB /* IMG_4301.jpg */; };
 		D616537E1D0AD5F0003C1BAB /* SocialFeatures-Extension(Linkedin).swift in Sources */ = {isa = PBXBuildFile; fileRef = D616537D1D0AD5F0003C1BAB /* SocialFeatures-Extension(Linkedin).swift */; };
 		D6195EFC1D09E93000293139 /* SocialFeatures-Extension(Instagram).swift in Sources */ = {isa = PBXBuildFile; fileRef = D6195EFB1D09E93000293139 /* SocialFeatures-Extension(Instagram).swift */; };
-		D61DED541D08076B0004B0BB /* api_validation.json in Resources */ = {isa = PBXBuildFile; fileRef = D61DED531D08076B0004B0BB /* api_validation.json */; };
-		D61DED551D0807EB0004B0BB /* TSGServiceClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D61DED511D0806810004B0BB /* TSGServiceClient.framework */; };
-		D61DED561D0807EB0004B0BB /* TSGServiceClient.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D61DED511D0806810004B0BB /* TSGServiceClient.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D628482C1D1913D600E31A7B /* linkedin-sdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D628482A1D1913D600E31A7B /* linkedin-sdk.framework */; };
+		D628482D1D1913D600E31A7B /* TSGServiceClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D628482B1D1913D600E31A7B /* TSGServiceClient.framework */; };
+		D628482F1D19154900E31A7B /* TSGServiceClient.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D628482B1D1913D600E31A7B /* TSGServiceClient.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D62848311D192C9800E31A7B /* TSGInstagramManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62848301D192C9800E31A7B /* TSGInstagramManager.swift */; };
 		D654AF9A1CFEEC7C0012E938 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D654AF991CFEEC7C0012E938 /* AppDelegate.swift */; };
 		D654AF9F1CFEEC7C0012E938 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D654AF9D1CFEEC7C0012E938 /* Main.storyboard */; };
 		D654AFA11CFEEC7C0012E938 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D654AFA01CFEEC7C0012E938 /* Assets.xcassets */; };
 		D654AFA41CFEEC7C0012E938 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D654AFA21CFEEC7C0012E938 /* LaunchScreen.storyboard */; };
-		D654AFAF1CFEEC7C0012E938 /* SocialSharingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D654AFAE1CFEEC7C0012E938 /* SocialSharingTests.swift */; };
 		D66CAB591D043D230010139B /* TwitterPostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66CAB581D043D230010139B /* TwitterPostsViewController.swift */; };
-		D66F68141D0C470D005CF8EB /* linkedin-sdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D66F68131D0C470D005CF8EB /* linkedin-sdk.framework */; };
 		D66F68161D0CAB13005CF8EB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D66F68151D0CAB13005CF8EB /* GoogleService-Info.plist */; };
 		D67184B61D0D36A90043C85B /* SocialFeatures-Extension(Google).swift in Sources */ = {isa = PBXBuildFile; fileRef = D67184B51D0D36A90043C85B /* SocialFeatures-Extension(Google).swift */; };
 		D67184B91D0D48030043C85B /* GoogleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67184B81D0D48030043C85B /* GoogleViewController.swift */; };
-		D6873E121D093D3900D7CAAA /* InstagramViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6873E111D093D3900D7CAAA /* InstagramViewController.swift */; };
+		D6873E121D093D3900D7CAAA /* InstagramLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6873E111D093D3900D7CAAA /* InstagramLogin.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		D654AFAB1CFEEC7C0012E938 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D654AF8E1CFEEC7C0012E938 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = D654AF951CFEEC7C0012E938;
-			remoteInfo = SocialSharing;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		D61DED571D0807EC0004B0BB /* Embed Frameworks */ = {
@@ -55,7 +42,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				D61DED561D0807EB0004B0BB /* TSGServiceClient.framework in Embed Frameworks */,
+				D628482F1D19154900E31A7B /* TSGServiceClient.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -63,41 +50,39 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		4BF671F7F33A7E6E55A8EFDF /* Pods_SocialSharing.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SocialSharing.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C76871D20D23F883DB7A43A0 /* Pods-SocialSharing.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialSharing.release.xcconfig"; path = "Pods/Target Support Files/Pods-SocialSharing/Pods-SocialSharing.release.xcconfig"; sourceTree = "<group>"; };
+		2B03195B023524BFBB9BEF91 /* Pods_SocialSharing.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SocialSharing.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		67AC751A94F90888E197AE95 /* Pods-SocialSharingTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialSharingTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SocialSharingTests/Pods-SocialSharingTests.release.xcconfig"; sourceTree = "<group>"; };
+		82E728541F7E68C511105E3C /* Pods-SocialSharing.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialSharing.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SocialSharing/Pods-SocialSharing.debug.xcconfig"; sourceTree = "<group>"; };
+		A6D49FE21F94E9DAFDB96305 /* Pods-SocialSharing.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialSharing.release.xcconfig"; path = "Pods/Target Support Files/Pods-SocialSharing/Pods-SocialSharing.release.xcconfig"; sourceTree = "<group>"; };
+		D24671FE2A2DA658D4131180 /* Pods-SocialSharingTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialSharingTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SocialSharingTests/Pods-SocialSharingTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D61374261D06B7F50012CA74 /* SocialFeatures-Extension(Facebook).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SocialFeatures-Extension(Facebook).swift"; sourceTree = "<group>"; };
 		D61374271D06B7F50012CA74 /* SocialFeatures-Extension(Twitter).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SocialFeatures-Extension(Twitter).swift"; sourceTree = "<group>"; };
 		D61374281D06B7F50012CA74 /* SocialFeatures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialFeatures.swift; sourceTree = "<group>"; };
 		D61374291D06B7F50012CA74 /* SocialListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialListViewController.swift; sourceTree = "<group>"; };
 		D613742F1D06B8540012CA74 /* TSGFacebookManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSGFacebookManager.swift; sourceTree = "<group>"; };
 		D61374311D06B8540012CA74 /* TSGTwitterManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSGTwitterManager.swift; sourceTree = "<group>"; };
-		D614D2101D0AEBEC001FFD77 /* LinkedinManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinkedinManager.swift; sourceTree = "<group>"; };
+		D614D2101D0AEBEC001FFD77 /* TSGLinkedinManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSGLinkedinManager.swift; sourceTree = "<group>"; };
 		D61577201D0038FB0047207C /* PersistentDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistentDataManager.swift; sourceTree = "<group>"; };
 		D61577281D0059EC0047207C /* Enum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enum.swift; sourceTree = "<group>"; };
 		D6157A721D0E885200565342 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
-		D61653791D0AB318003C1BAB /* flower.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flower.png; sourceTree = "<group>"; };
-		D616537B1D0AB437003C1BAB /* IMG_4301.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_4301.jpg; sourceTree = "<group>"; };
 		D616537D1D0AD5F0003C1BAB /* SocialFeatures-Extension(Linkedin).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SocialFeatures-Extension(Linkedin).swift"; sourceTree = "<group>"; };
 		D6195EFB1D09E93000293139 /* SocialFeatures-Extension(Instagram).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SocialFeatures-Extension(Instagram).swift"; sourceTree = "<group>"; };
 		D61B2C891D0B4F5500464124 /* SocialSharing-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SocialSharing-Bridging-Header.h"; sourceTree = "<group>"; };
-		D61DED511D0806810004B0BB /* TSGServiceClient.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TSGServiceClient.framework; sourceTree = "<group>"; };
-		D61DED531D08076B0004B0BB /* api_validation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = api_validation.json; sourceTree = "<group>"; };
+		D628482A1D1913D600E31A7B /* linkedin-sdk.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = "linkedin-sdk.framework"; sourceTree = "<group>"; };
+		D628482B1D1913D600E31A7B /* TSGServiceClient.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TSGServiceClient.framework; sourceTree = "<group>"; };
+		D62848301D192C9800E31A7B /* TSGInstagramManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSGInstagramManager.swift; sourceTree = "<group>"; };
 		D654AF961CFEEC7C0012E938 /* SocialSharing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialSharing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D654AF991CFEEC7C0012E938 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D654AF9E1CFEEC7C0012E938 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D654AFA01CFEEC7C0012E938 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D654AFA31CFEEC7C0012E938 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D654AFA51CFEEC7C0012E938 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D654AFAA1CFEEC7C0012E938 /* SocialSharingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SocialSharingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D654AFAE1CFEEC7C0012E938 /* SocialSharingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialSharingTests.swift; sourceTree = "<group>"; };
-		D654AFB01CFEEC7C0012E938 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D66CAB581D043D230010139B /* TwitterPostsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterPostsViewController.swift; sourceTree = "<group>"; };
-		D66F68131D0C470D005CF8EB /* linkedin-sdk.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = "linkedin-sdk.framework"; sourceTree = "<group>"; };
 		D66F68151D0CAB13005CF8EB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D67184B51D0D36A90043C85B /* SocialFeatures-Extension(Google).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SocialFeatures-Extension(Google).swift"; sourceTree = "<group>"; };
 		D67184B81D0D48030043C85B /* GoogleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleViewController.swift; sourceTree = "<group>"; };
-		D6873E111D093D3900D7CAAA /* InstagramViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstagramViewController.swift; sourceTree = "<group>"; };
-		F5E21A3B19486C21C5D23175 /* Pods-SocialSharing.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialSharing.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SocialSharing/Pods-SocialSharing.debug.xcconfig"; sourceTree = "<group>"; };
+		D6873E111D093D3900D7CAAA /* InstagramLogin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstagramLogin.swift; sourceTree = "<group>"; };
+		FE751D741E445D0EF07CFE6A /* Pods_SocialSharingTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SocialSharingTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,38 +91,34 @@
 			buildActionMask = 2147483647;
 			files = (
 				D6157A731D0E885200565342 /* Twitter.framework in Frameworks */,
-				D66F68141D0C470D005CF8EB /* linkedin-sdk.framework in Frameworks */,
-				2EA03FC7729466BBAADDFF3B /* Pods_SocialSharing.framework in Frameworks */,
-				D61DED551D0807EB0004B0BB /* TSGServiceClient.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D654AFA71CFEEC7C0012E938 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				D628482C1D1913D600E31A7B /* linkedin-sdk.framework in Frameworks */,
+				D628482D1D1913D600E31A7B /* TSGServiceClient.framework in Frameworks */,
+				C32530EE391F820A119A89DA /* Pods_SocialSharing.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0E54DB6247357CA2BB9096E7 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				F5E21A3B19486C21C5D23175 /* Pods-SocialSharing.debug.xcconfig */,
-				C76871D20D23F883DB7A43A0 /* Pods-SocialSharing.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		48056EB5268ED047FBAE706D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				D6157A721D0E885200565342 /* Twitter.framework */,
-				4BF671F7F33A7E6E55A8EFDF /* Pods_SocialSharing.framework */,
+				2B03195B023524BFBB9BEF91 /* Pods_SocialSharing.framework */,
+				FE751D741E445D0EF07CFE6A /* Pods_SocialSharingTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6F4739F9BF9AEBF54F8E16AC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				82E728541F7E68C511105E3C /* Pods-SocialSharing.debug.xcconfig */,
+				A6D49FE21F94E9DAFDB96305 /* Pods-SocialSharing.release.xcconfig */,
+				D24671FE2A2DA658D4131180 /* Pods-SocialSharingTests.debug.xcconfig */,
+				67AC751A94F90888E197AE95 /* Pods-SocialSharingTests.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		D60EF25A1D0165AF00F878C1 /* Example */ = {
@@ -174,26 +155,30 @@
 		D614D20F1D0AEBC7001FFD77 /* LinkedinManager */ = {
 			isa = PBXGroup;
 			children = (
-				D614D2101D0AEBEC001FFD77 /* LinkedinManager.swift */,
+				D614D2101D0AEBEC001FFD77 /* TSGLinkedinManager.swift */,
 			);
 			path = LinkedinManager;
+			sourceTree = "<group>";
+		};
+		D62848291D1913D600E31A7B /* External */ = {
+			isa = PBXGroup;
+			children = (
+				D628482A1D1913D600E31A7B /* linkedin-sdk.framework */,
+				D628482B1D1913D600E31A7B /* TSGServiceClient.framework */,
+			);
+			path = External;
 			sourceTree = "<group>";
 		};
 		D654AF8D1CFEEC7C0012E938 = {
 			isa = PBXGroup;
 			children = (
-				D616537B1D0AB437003C1BAB /* IMG_4301.jpg */,
-				D61DED531D08076B0004B0BB /* api_validation.json */,
 				D66F68151D0CAB13005CF8EB /* GoogleService-Info.plist */,
-				D61653791D0AB318003C1BAB /* flower.png */,
-				D66F68131D0C470D005CF8EB /* linkedin-sdk.framework */,
-				D61DED511D0806810004B0BB /* TSGServiceClient.framework */,
+				D62848291D1913D600E31A7B /* External */,
 				D654AF981CFEEC7C0012E938 /* SocialSharing */,
 				D60EF25A1D0165AF00F878C1 /* Example */,
-				D654AFAD1CFEEC7C0012E938 /* SocialSharingTests */,
 				D654AF971CFEEC7C0012E938 /* Products */,
-				0E54DB6247357CA2BB9096E7 /* Pods */,
 				48056EB5268ED047FBAE706D /* Frameworks */,
+				6F4739F9BF9AEBF54F8E16AC /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -201,7 +186,6 @@
 			isa = PBXGroup;
 			children = (
 				D654AF961CFEEC7C0012E938 /* SocialSharing.app */,
-				D654AFAA1CFEEC7C0012E938 /* SocialSharingTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -226,15 +210,6 @@
 			path = SocialSharing;
 			sourceTree = "<group>";
 		};
-		D654AFAD1CFEEC7C0012E938 /* SocialSharingTests */ = {
-			isa = PBXGroup;
-			children = (
-				D654AFAE1CFEEC7C0012E938 /* SocialSharingTests.swift */,
-				D654AFB01CFEEC7C0012E938 /* Info.plist */,
-			);
-			path = SocialSharingTests;
-			sourceTree = "<group>";
-		};
 		D67184B71D0D47E00043C85B /* GoogleManager */ = {
 			isa = PBXGroup;
 			children = (
@@ -246,7 +221,8 @@
 		D6873E101D093CB300D7CAAA /* InstagramManager */ = {
 			isa = PBXGroup;
 			children = (
-				D6873E111D093D3900D7CAAA /* InstagramViewController.swift */,
+				D62848301D192C9800E31A7B /* TSGInstagramManager.swift */,
+				D6873E111D093D3900D7CAAA /* InstagramLogin.swift */,
 			);
 			path = InstagramManager;
 			sourceTree = "<group>";
@@ -258,14 +234,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D654AFB31CFEEC7C0012E938 /* Build configuration list for PBXNativeTarget "SocialSharing" */;
 			buildPhases = (
-				B0A6576B21B7A0E2C395B4F3 /* Check Pods Manifest.lock */,
+				C3D8F7B1AEEBC99ABFC9B5FD /* [CP] Check Pods Manifest.lock */,
 				D654AF921CFEEC7C0012E938 /* Sources */,
 				D654AF931CFEEC7C0012E938 /* Frameworks */,
 				D654AF941CFEEC7C0012E938 /* Resources */,
-				EE3E06F50B4818365CE1A365 /* Embed Pods Frameworks */,
-				C92F7E67FBC9B6F47F944505 /* Copy Pods Resources */,
 				D6EFE6C01D0194CF006E7CD8 /* ShellScript */,
 				D61DED571D0807EC0004B0BB /* Embed Frameworks */,
+				0841FFC9F9DC0BA4A9DD7940 /* [CP] Embed Pods Frameworks */,
+				450040021E000D292BCF79CF /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -275,24 +251,6 @@
 			productName = SocialSharing;
 			productReference = D654AF961CFEEC7C0012E938 /* SocialSharing.app */;
 			productType = "com.apple.product-type.application";
-		};
-		D654AFA91CFEEC7C0012E938 /* SocialSharingTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = D654AFB61CFEEC7C0012E938 /* Build configuration list for PBXNativeTarget "SocialSharingTests" */;
-			buildPhases = (
-				D654AFA61CFEEC7C0012E938 /* Sources */,
-				D654AFA71CFEEC7C0012E938 /* Frameworks */,
-				D654AFA81CFEEC7C0012E938 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				D654AFAC1CFEEC7C0012E938 /* PBXTargetDependency */,
-			);
-			name = SocialSharingTests;
-			productName = SocialSharingTests;
-			productReference = D654AFAA1CFEEC7C0012E938 /* SocialSharingTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -306,10 +264,6 @@
 				TargetAttributes = {
 					D654AF951CFEEC7C0012E938 = {
 						CreatedOnToolsVersion = 7.3.1;
-					};
-					D654AFA91CFEEC7C0012E938 = {
-						CreatedOnToolsVersion = 7.3.1;
-						TestTargetID = D654AF951CFEEC7C0012E938;
 					};
 				};
 			};
@@ -327,7 +281,6 @@
 			projectRoot = "";
 			targets = (
 				D654AF951CFEEC7C0012E938 /* SocialSharing */,
-				D654AFA91CFEEC7C0012E938 /* SocialSharingTests */,
 			);
 		};
 /* End PBXProject section */
@@ -337,54 +290,59 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D616537A1D0AB318003C1BAB /* flower.png in Resources */,
 				D654AFA41CFEEC7C0012E938 /* LaunchScreen.storyboard in Resources */,
 				D654AFA11CFEEC7C0012E938 /* Assets.xcassets in Resources */,
-				D616537C1D0AB437003C1BAB /* IMG_4301.jpg in Resources */,
 				D654AF9F1CFEEC7C0012E938 /* Main.storyboard in Resources */,
-				D61DED541D08076B0004B0BB /* api_validation.json in Resources */,
 				D66F68161D0CAB13005CF8EB /* GoogleService-Info.plist in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D654AFA81CFEEC7C0012E938 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		B0A6576B21B7A0E2C395B4F3 /* Check Pods Manifest.lock */ = {
+		0841FFC9F9DC0BA4A9DD7940 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SocialSharing/Pods-SocialSharing-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C92F7E67FBC9B6F47F944505 /* Copy Pods Resources */ = {
+		450040021E000D292BCF79CF /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SocialSharing/Pods-SocialSharing-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C3D8F7B1AEEBC99ABFC9B5FD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		D6EFE6C01D0194CF006E7CD8 /* ShellScript */ = {
@@ -400,21 +358,6 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Fabric/run\" b259afa8fc35beee91cb29bb3f1b0533a6eb5dc0 ff8ee27a54dff4e3c334ac22bf52a714c933ea88271aa6163b34aa3603a21624";
 		};
-		EE3E06F50B4818365CE1A365 /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SocialSharing/Pods-SocialSharing-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -426,12 +369,13 @@
 				D67184B91D0D48030043C85B /* GoogleViewController.swift in Sources */,
 				D61374331D06B8540012CA74 /* TSGTwitterManager.swift in Sources */,
 				D61577211D0038FB0047207C /* PersistentDataManager.swift in Sources */,
-				D6873E121D093D3900D7CAAA /* InstagramViewController.swift in Sources */,
+				D6873E121D093D3900D7CAAA /* InstagramLogin.swift in Sources */,
 				D6195EFC1D09E93000293139 /* SocialFeatures-Extension(Instagram).swift in Sources */,
 				D613742C1D06B7F50012CA74 /* SocialFeatures.swift in Sources */,
 				D66CAB591D043D230010139B /* TwitterPostsViewController.swift in Sources */,
-				D614D2111D0AEBEC001FFD77 /* LinkedinManager.swift in Sources */,
+				D614D2111D0AEBEC001FFD77 /* TSGLinkedinManager.swift in Sources */,
 				D613742B1D06B7F50012CA74 /* SocialFeatures-Extension(Twitter).swift in Sources */,
+				D62848311D192C9800E31A7B /* TSGInstagramManager.swift in Sources */,
 				D67184B61D0D36A90043C85B /* SocialFeatures-Extension(Google).swift in Sources */,
 				D613742A1D06B7F50012CA74 /* SocialFeatures-Extension(Facebook).swift in Sources */,
 				D61374321D06B8540012CA74 /* TSGFacebookManager.swift in Sources */,
@@ -441,23 +385,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D654AFA61CFEEC7C0012E938 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D654AFAF1CFEEC7C0012E938 /* SocialSharingTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		D654AFAC1CFEEC7C0012E938 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = D654AF951CFEEC7C0012E938 /* SocialSharing */;
-			targetProxy = D654AFAB1CFEEC7C0012E938 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		D654AF9D1CFEEC7C0012E938 /* Main.storyboard */ = {
@@ -570,7 +498,7 @@
 		};
 		D654AFB41CFEEC7C0012E938 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F5E21A3B19486C21C5D23175 /* Pods-SocialSharing.debug.xcconfig */;
+			baseConfigurationReference = 82E728541F7E68C511105E3C /* Pods-SocialSharing.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -581,6 +509,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/External",
 				);
 				INFOPLIST_FILE = SocialSharing/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
@@ -595,7 +524,7 @@
 		};
 		D654AFB51CFEEC7C0012E938 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C76871D20D23F883DB7A43A0 /* Pods-SocialSharing.release.xcconfig */;
+			baseConfigurationReference = A6D49FE21F94E9DAFDB96305 /* Pods-SocialSharing.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -606,6 +535,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/External",
 				);
 				INFOPLIST_FILE = SocialSharing/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
@@ -614,30 +544,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "b7f70d78-249f-4c67-b401-7dd5da974f5a";
 				SWIFT_OBJC_BRIDGING_HEADER = "SocialSharing/SocialSharing-Bridging-Header.h";
-			};
-			name = Release;
-		};
-		D654AFB71CFEEC7C0012E938 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = SocialSharingTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.test.SocialSharingTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SocialSharing.app/SocialSharing";
-			};
-			name = Debug;
-		};
-		D654AFB81CFEEC7C0012E938 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = SocialSharingTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.test.SocialSharingTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SocialSharing.app/SocialSharing";
 			};
 			name = Release;
 		};
@@ -658,15 +564,6 @@
 			buildConfigurations = (
 				D654AFB41CFEEC7C0012E938 /* Debug */,
 				D654AFB51CFEEC7C0012E938 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		D654AFB61CFEEC7C0012E938 /* Build configuration list for PBXNativeTarget "SocialSharingTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				D654AFB71CFEEC7C0012E938 /* Debug */,
-				D654AFB81CFEEC7C0012E938 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

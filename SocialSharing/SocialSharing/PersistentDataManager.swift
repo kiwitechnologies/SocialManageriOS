@@ -14,8 +14,7 @@ class PersistentDataManager: NSObject {
                                                 "Post image and text message in background","Post Image and Text","Post Text Message",
                                                 "Post linked content","Post linked content in background","Get Friend",
                                                 "Invite Friend","Logout"],
-                                    "INSTAGRAM":["Login","Get User Profile","Get Friend's Profile","Get PublishedMedia",
-                                                "Post Image","Logout"],
+                                    "INSTAGRAM":["Login","Get User Profile","Get Friend's Profile","Get PublishedMedia","Logout"],
                                     "TWITTER":["Login","Get Profile","Publish Post","Get All Post","Logout"],
                                     "LINKEDIN":["Login","Get Profile","Publish Post","Get All Post","Logout"],
                                     "GOOGLE":["Google-Login","Google Sharing","Google Calendar","Logout"]

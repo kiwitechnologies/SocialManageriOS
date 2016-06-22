@@ -38,9 +38,8 @@ extension SocialFeatures {
         case 3:
             getMyPublishMedia()
             
-        case 4:
-            publishPhoto()
-            
+        case 5:
+            instagramLogOut()
             
         default:
             break
@@ -49,38 +48,40 @@ extension SocialFeatures {
     
     func InstagramLogin(){
         let instagramLogin = self.storyboard?.instantiateViewControllerWithIdentifier("InstagramView") as! InstagramViewController
-        instagramLogin.IMOptions = InstagramOptions.INSTAGRAM_LOGIN
         self.navigationController?.pushViewController(instagramLogin, animated: true)
     }
     
     func getInstagramUserProfile(){
-        
-        let instagramLogin = self.storyboard?.instantiateViewControllerWithIdentifier("InstagramView") as! InstagramViewController
-        instagramLogin.IMOptions = InstagramOptions.INSTAGRAM_USER_PROFILE
-        self.navigationController?.pushViewController(instagramLogin, animated: true)
 
-        }
+        TSGInstagramManager.sharedInstance.instagramUserProfile({ (object) in
+            print(object)
+            }) { (error) in
+                print(error)
+        }        }
     
     func getMyPublishMedia(){
         
-        let instagramLogin = self.storyboard?.instantiateViewControllerWithIdentifier("InstagramView") as! InstagramViewController
-        instagramLogin.IMOptions = InstagramOptions.INSTAGRAM_PUBLISH_POST
-        self.navigationController?.pushViewController(instagramLogin, animated: true)
-
-        
+        TSGInstagramManager.sharedInstance.instagramPostImage(self.view)
     }
     
     func getFriendsProfile(){
-        let instagramLogin = self.storyboard?.instantiateViewControllerWithIdentifier("InstagramView") as! InstagramViewController
-        instagramLogin.IMOptions = InstagramOptions.INSTAGRAM_FRIEND_PROFILE
-        self.navigationController?.pushViewController(instagramLogin, animated: true)
-
+        
+     TSGInstagramManager.sharedInstance.instagramFriendProfile({ (object) in
+        print(object)
+        }) { (error) in
+            print(error)
+        }
     }
     
     func publishPhoto(){
-        
-        let instagramLogin = self.storyboard?.instantiateViewControllerWithIdentifier("InstagramView") as! InstagramViewController
-        instagramLogin.IMOptions = InstagramOptions.INSTAGRAM_PUBLISH_POST
-        self.navigationController?.pushViewController(instagramLogin, animated: true)
-      }
+        TSGInstagramManager.sharedInstance.instagramPublishMedia({ (object) in
+            print(object)
+            }) { (error) in
+                print(error)
+        }
+    }
+    
+    func instagramLogOut(){
+         TSGInstagramManager.sharedInstance.instagramLogOut()
+    }
 }
