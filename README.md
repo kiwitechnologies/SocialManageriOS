@@ -16,11 +16,10 @@ Getting started
 
 Strategy configuration
 ======================
-- First Step - Run Pod Install.
 
 FACEBOOK
 --------
-1. Create a application on facebook (if not exist), https://developers.facebook.com/quickstarts/
+1. Create a application on facebook (if not exist), https://developers.facebook.com/quickstarts/?platform=android
 2. Go through with below url and set up your application with provided instructions
 https://developers.facebook.com/docs/android/getting-started/
 3. Copy "TSGFacebookManger.swift" file into your project.

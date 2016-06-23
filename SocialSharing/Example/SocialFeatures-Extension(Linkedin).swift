@@ -36,26 +36,36 @@ extension SocialFeatures {
             print(object)
             }, failureBlock: { (error) in
                 print(error)
-            }) { (hasSession) in
-                print("Has already session?: \(hasSession)")
+        }) { (hasSession) in
+            print("Has already session?: \(hasSession)")
         }
     }
     
     func getLinkedinUserProfile(){
-    
+        
         TSGLinkedinManager.linkedInUserProfile({ (object) in
             print(object)
-            }) { (error) in
-                print(error)
-        }  
+        }) { (error) in
+            print(error)
+        }
     }
     
     func shareOnLinkedin(){
-        TSGLinkedinManager.shareOnLinkedin()
+        let comment = ["comment":"Final Test Going on!"]
+        let visiblityArray = [ "code":"anyone" ]
+        
+        TSGLinkedinManager.shareOnLinkedin(comment, visbilityArray: visiblityArray, success: { (object) in
+            print(object)
+            }) { (failure) in
+                print(failure)
+        }
     }
     
     func linkedinLogOut(){
-        TSGLinkedinManager.linkedinLogOut()
-       
+        
+        TSGLinkedinManager.linkedinLogOut { (status) in
+            print(status)
+        }
+        
     }
 }

@@ -10,7 +10,7 @@ import UIKit
 import TSGServiceClient
 
 
-class InstagramViewController: UIViewController {
+class InstagramLoginViewController: UIViewController {
 
     @IBOutlet weak var webView: UIWebView!
     var IMOptions:InstagramOptions!
@@ -29,7 +29,7 @@ class InstagramViewController: UIViewController {
     
 }
 
-extension InstagramViewController:UIWebViewDelegate {
+extension InstagramLoginViewController:UIWebViewDelegate {
     
      func webView(webView: UIWebView, shouldStartLoadWithRequest request: NSURLRequest, navigationType: UIWebViewNavigationType) -> Bool {
         
@@ -42,12 +42,11 @@ extension InstagramViewController:UIWebViewDelegate {
             let nsText = urlString! as NSString
             let tokenParam = nsText.rangeOfString("access_token=")
             let token = nsText.substringFromIndex(NSMaxRange(tokenParam))
-            print(token)
+            
             if token.characters.count > 0 {
                 NSUserDefaults().setString(token, forKey: "Instagram_Token")
                 self.navigationController?.popViewControllerAnimated(true)
             }
-        
         }
         return true
     }

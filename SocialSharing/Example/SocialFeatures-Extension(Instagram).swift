@@ -10,35 +10,23 @@ import UIKit
 
 extension SocialFeatures {
     
-    /*
-     Get Profile
-     Share Image
-     Share Video
-     User Profile
-     Self Recent Media
-     User Recent Media
-     Follows
-     Followed By
-     Logout
-     */
-    
     func getInstagramFeatures(index:Int, viewController:UIViewController){
         
         switch index {
             
         case 0:
             InstagramLogin()
-
+            
         case 1:
             getInstagramUserProfile()
             
         case 2:
             getFriendsProfile()
-
+            
         case 3:
             getMyPublishMedia()
             
-        case 5:
+        case 4:
             instagramLogOut()
             
         default:
@@ -47,41 +35,40 @@ extension SocialFeatures {
     }
     
     func InstagramLogin(){
-        let instagramLogin = self.storyboard?.instantiateViewControllerWithIdentifier("InstagramView") as! InstagramViewController
+        let instagramLogin = self.storyboard?.instantiateViewControllerWithIdentifier("InstagramLoginViewController") as! InstagramLoginViewController
         self.navigationController?.pushViewController(instagramLogin, animated: true)
     }
     
     func getInstagramUserProfile(){
-
+        
         TSGInstagramManager.sharedInstance.instagramUserProfile({ (object) in
             print(object)
-            }) { (error) in
-                print(error)
+        }) { (error) in
+            print(error)
         }        }
     
     func getMyPublishMedia(){
-        
-        TSGInstagramManager.sharedInstance.instagramPostImage(self.view)
+        let image = UIImage(named: "IMG_4301.jpg", inBundle: NSBundle(forClass: self.dynamicType), compatibleWithTraitCollection: nil)
+
+        if image != nil {
+            TSGInstagramManager.sharedInstance.instagramPostImage(self.view, image: image!) { (status) in
+                print(status)
+            }
+        }
     }
     
     func getFriendsProfile(){
         
-     TSGInstagramManager.sharedInstance.instagramFriendProfile({ (object) in
-        print(object)
-        }) { (error) in
-            print(error)
-        }
-    }
-    
-    func publishPhoto(){
-        TSGInstagramManager.sharedInstance.instagramPublishMedia({ (object) in
+        TSGInstagramManager.sharedInstance.instagramFriendProfile("3314177362", successBlock: { (object) in
             print(object)
-            }) { (error) in
-                print(error)
+            }) { (failure) in
+                print(failure)
         }
     }
     
     func instagramLogOut(){
-         TSGInstagramManager.sharedInstance.instagramLogOut()
+        TSGInstagramManager.sharedInstance.instagramLogOut { (status) in
+            print(status)
+        }
     }
 }

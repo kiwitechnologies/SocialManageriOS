@@ -70,9 +70,6 @@ extension SocialFeatures:UITableViewDataSource, UITableViewDelegate {
             getTwitterFeautres(indexPath.row, viewController: self)
             break
             
-        case SocialPlatformName.GOOGLE.hashValue:
-            getGoogleFeature(indexPath.row, viewController: self)
-            break
         default:
             break
         }

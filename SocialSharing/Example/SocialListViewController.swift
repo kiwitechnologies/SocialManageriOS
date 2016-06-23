@@ -68,8 +68,8 @@ extension SocialListViewController:UITableViewDataSource, UITableViewDelegate {
             break
         case SocialPlatformName.GOOGLE.hashValue:
 
-            socialFeautreObj?.socialPlatform = SocialPlatformName.GOOGLE
-            self.navigationController?.pushViewController(socialFeautreObj!, animated: true)
+            let googleObj = self.storyboard?.instantiateViewControllerWithIdentifier("GoogleViewController") as! GoogleViewController
+            self.navigationController?.pushViewController(googleObj, animated: true)
 
         default:
             break

@@ -22,29 +22,27 @@ extension SocialFeatures {
             getProfile()
             
         case 2:
-            postTextMessageInBackGround()
             
-        case 3:
             postImageAndTextInBackGround()
             
-        case 4:
+        case 3:
             postImageAndText(viewController)
             
-        case 5:
+        case 4:
             postLinkedContent()
             
-        case 6:
+        case 5:
             postLinkedContentInBackground()
             
-        case 7:
+        case 6:
             getFriend()
             
-        case 8:
+        case 7:
             inviteFriend()
-            break
             
-        case 9:
+        case 8:
             logOut()
+            
             
         default:
             break
@@ -53,80 +51,109 @@ extension SocialFeatures {
     
     //Mark: Facebook login
     func facebookLogin(){
-    
+        
         
         let permissionArray = ["public_profile","email","user_friends"]
         
         TSGFacebookManager.sharedInstance.loginWithPersmissions(permissionArray, success: {
             print("Facebook Login Successful")
-            }, cancelled: { 
+            }, cancelled: {
                 print("Facebook Login Cancelled")
-
+                
             }, failure: {_ in
                 print("Facebook Login failure")
-
+                
             }
         )
     }
     
     //Mark: Facebook Get User Profile
-
+    
     func getProfile(){
         
         TSGFacebookManager.sharedInstance.getUserData(["fields":"name,id,gender,email,picture.type(large)"], success: { (object) in
             print(object)
-            }) { (error) in
-                
+        }) { (error) in
+            
         }
     }
     
-    //Mark: Facebook Post text message in Background
-
-    func postTextMessageInBackGround(){
-
-        TSGFacebookManager.sharedInstance.postTextMessage(self, contentTitle: "TSG Message Testing")
-    }
-    
     //Mark: Facebook Post image and text in Background
-
-    func postImageAndTextInBackGround(){
-     
-        TSGFacebookManager.sharedInstance.postTextWithImageInBackground(self, caption: "TSG Post Text and Image", imageName: "abc.png")
-
+    
+    func postImageAndTextInBackGround()
+    {
+        TSGFacebookManager.sharedInstance.postTextWithImageInBackground(self, caption: "TSG Post Text and Image", imageName: "abc.png", successBlock: { (response) in
+            print(response)
+            }, failureBlock: { (error) in
+                print(error)
+        }) { (message) in
+            print(message)
+        }
     }
     
     //Mark: Facebook Post image and text
-
-    func postImageAndText(viewController:UIViewController){
-        TSGFacebookManager.sharedInstance.postImageAndText(self, caption: "TSG Post Text and Image", imageName: "abc.png")
+    
+    func postImageAndText(viewController:UIViewController)
+    {
+        TSGFacebookManager.sharedInstance.postImageAndText(self, caption: "TSG Post Text and Image", imageName: "abc.png", successBlock: { (response) -> ()? in
+            print(response)
+            }, failureBlock: { (error) -> ()? in
+                print(error)
+        }) { (cancel) -> ()? in
+            print(cancel)
+        }
     }
     
     //Mark: Facebook Post Link
-
+    
     func postLinkedContent(){
         
-        TSGFacebookManager.sharedInstance.postLink(self, contentURL: "https://developers.facebook.com", contentTitle: "TSG Link Share Testing")
+        TSGFacebookManager.sharedInstance.postLink(self, contentURL: "https://developers.facebook.com", contentTitle: "TSG Link SharTesting", successBlock: { (response) in
+            print(response)
+            }, failureBlock: { (failure) in
+                print(failure)
+            }, cancel: { (msg) in
+                print(msg)
+        })
     }
     
     //Mark: Facebook Post Link
-
+    
     func postLinkedContentInBackground(){
         
-        TSGFacebookManager.sharedInstance.postLinkInBackground(self, contentURL: "https://developers.facebook.com", contentTitle: "TSG Link Share Testing")
+        TSGFacebookManager.sharedInstance.postLinkInBackground(self, contentURL: "https://developers.facebook.com", contentTitle: "TSG Link Share Testing", successBlock: { (response) in
+            print(response)
+            }, failureBlock: { (failure) in
+                print(failure)
+        }) { (msg) in
+            print(msg)
+        }
         
     }
     
     func getFriend(){
-        TSGFacebookManager.sharedInstance.getFriendList()
+        
+        TSGFacebookManager.sharedInstance.getFriendList({ (object) in
+            print(object)
+        }) { (error) in
+            print(error)
+        }
     }
     
     func inviteFriend(){
-        TSGFacebookManager.sharedInstance.appInvite(self, appLinkURL: "https://fb.me/1241148712577097", previewImageURL: "")
+        
+        TSGFacebookManager.sharedInstance.appInvite(self, appLinkURL: "", previewImageURL: "", successBlock: { (result) in
+            print(result)
+        }) { (error) in
+            print(error)
+        }
     }
     
     func logOut(){
-        TSGFacebookManager.sharedInstance.facebookLogOut()
+        TSGFacebookManager.sharedInstance.facebookLogOut { (status) in
+            print(status)
+        }
     }
-
+    
     
 }

@@ -30,9 +30,8 @@
 		D654AFA41CFEEC7C0012E938 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D654AFA21CFEEC7C0012E938 /* LaunchScreen.storyboard */; };
 		D66CAB591D043D230010139B /* TwitterPostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66CAB581D043D230010139B /* TwitterPostsViewController.swift */; };
 		D66F68161D0CAB13005CF8EB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D66F68151D0CAB13005CF8EB /* GoogleService-Info.plist */; };
-		D67184B61D0D36A90043C85B /* SocialFeatures-Extension(Google).swift in Sources */ = {isa = PBXBuildFile; fileRef = D67184B51D0D36A90043C85B /* SocialFeatures-Extension(Google).swift */; };
 		D67184B91D0D48030043C85B /* GoogleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67184B81D0D48030043C85B /* GoogleViewController.swift */; };
-		D6873E121D093D3900D7CAAA /* InstagramLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6873E111D093D3900D7CAAA /* InstagramLogin.swift */; };
+		D6873E121D093D3900D7CAAA /* InstagramLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6873E111D093D3900D7CAAA /* InstagramLoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -62,26 +61,25 @@
 		D613742F1D06B8540012CA74 /* TSGFacebookManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSGFacebookManager.swift; sourceTree = "<group>"; };
 		D61374311D06B8540012CA74 /* TSGTwitterManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSGTwitterManager.swift; sourceTree = "<group>"; };
 		D614D2101D0AEBEC001FFD77 /* TSGLinkedinManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSGLinkedinManager.swift; sourceTree = "<group>"; };
-		D61577201D0038FB0047207C /* PersistentDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistentDataManager.swift; sourceTree = "<group>"; };
-		D61577281D0059EC0047207C /* Enum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enum.swift; sourceTree = "<group>"; };
+		D61577201D0038FB0047207C /* PersistentDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersistentDataManager.swift; path = ../SocialSharing/PersistentDataManager.swift; sourceTree = "<group>"; };
+		D61577281D0059EC0047207C /* Enum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Enum.swift; path = ../SocialSharing/Enum.swift; sourceTree = "<group>"; };
 		D6157A721D0E885200565342 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 		D616537D1D0AD5F0003C1BAB /* SocialFeatures-Extension(Linkedin).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SocialFeatures-Extension(Linkedin).swift"; sourceTree = "<group>"; };
 		D6195EFB1D09E93000293139 /* SocialFeatures-Extension(Instagram).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SocialFeatures-Extension(Instagram).swift"; sourceTree = "<group>"; };
-		D61B2C891D0B4F5500464124 /* SocialSharing-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SocialSharing-Bridging-Header.h"; sourceTree = "<group>"; };
+		D61B2C891D0B4F5500464124 /* SocialSharing-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "SocialSharing-Bridging-Header.h"; path = "SocialSharing/SocialSharing-Bridging-Header.h"; sourceTree = "<group>"; };
 		D628482A1D1913D600E31A7B /* linkedin-sdk.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = "linkedin-sdk.framework"; sourceTree = "<group>"; };
 		D628482B1D1913D600E31A7B /* TSGServiceClient.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TSGServiceClient.framework; sourceTree = "<group>"; };
 		D62848301D192C9800E31A7B /* TSGInstagramManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSGInstagramManager.swift; sourceTree = "<group>"; };
 		D654AF961CFEEC7C0012E938 /* SocialSharing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialSharing.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		D654AF991CFEEC7C0012E938 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D654AF991CFEEC7C0012E938 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../SocialSharing/AppDelegate.swift; sourceTree = "<group>"; };
 		D654AF9E1CFEEC7C0012E938 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		D654AFA01CFEEC7C0012E938 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D654AFA01CFEEC7C0012E938 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../SocialSharing/Assets.xcassets; sourceTree = "<group>"; };
 		D654AFA31CFEEC7C0012E938 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		D654AFA51CFEEC7C0012E938 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D654AFA51CFEEC7C0012E938 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../SocialSharing/Info.plist; sourceTree = "<group>"; };
 		D66CAB581D043D230010139B /* TwitterPostsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterPostsViewController.swift; sourceTree = "<group>"; };
-		D66F68151D0CAB13005CF8EB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		D67184B51D0D36A90043C85B /* SocialFeatures-Extension(Google).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SocialFeatures-Extension(Google).swift"; sourceTree = "<group>"; };
+		D66F68151D0CAB13005CF8EB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D67184B81D0D48030043C85B /* GoogleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleViewController.swift; sourceTree = "<group>"; };
-		D6873E111D093D3900D7CAAA /* InstagramLogin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstagramLogin.swift; sourceTree = "<group>"; };
+		D6873E111D093D3900D7CAAA /* InstagramLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstagramLoginViewController.swift; sourceTree = "<group>"; };
 		FE751D741E445D0EF07CFE6A /* Pods_SocialSharingTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SocialSharingTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -100,6 +98,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2A0BE1681D1BC9DE00C18F90 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D654AFA21CFEEC7C0012E938 /* LaunchScreen.storyboard */,
+				D654AFA51CFEEC7C0012E938 /* Info.plist */,
+				D654AF9D1CFEEC7C0012E938 /* Main.storyboard */,
+				D654AFA01CFEEC7C0012E938 /* Assets.xcassets */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		48056EB5268ED047FBAE706D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -124,14 +133,17 @@
 		D60EF25A1D0165AF00F878C1 /* Example */ = {
 			isa = PBXGroup;
 			children = (
+				D654AF991CFEEC7C0012E938 /* AppDelegate.swift */,
+				D61374291D06B7F50012CA74 /* SocialListViewController.swift */,
+				D61374281D06B7F50012CA74 /* SocialFeatures.swift */,
 				D61374261D06B7F50012CA74 /* SocialFeatures-Extension(Facebook).swift */,
 				D61374271D06B7F50012CA74 /* SocialFeatures-Extension(Twitter).swift */,
+				D66CAB581D043D230010139B /* TwitterPostsViewController.swift */,
 				D6195EFB1D09E93000293139 /* SocialFeatures-Extension(Instagram).swift */,
 				D616537D1D0AD5F0003C1BAB /* SocialFeatures-Extension(Linkedin).swift */,
-				D67184B51D0D36A90043C85B /* SocialFeatures-Extension(Google).swift */,
-				D61374281D06B7F50012CA74 /* SocialFeatures.swift */,
-				D61374291D06B7F50012CA74 /* SocialListViewController.swift */,
-				D66CAB581D043D230010139B /* TwitterPostsViewController.swift */,
+				D61577281D0059EC0047207C /* Enum.swift */,
+				D61577201D0038FB0047207C /* PersistentDataManager.swift */,
+				2A0BE1681D1BC9DE00C18F90 /* Resources */,
 			);
 			path = Example;
 			sourceTree = "<group>";
@@ -172,7 +184,7 @@
 		D654AF8D1CFEEC7C0012E938 = {
 			isa = PBXGroup;
 			children = (
-				D66F68151D0CAB13005CF8EB /* GoogleService-Info.plist */,
+				D61B2C891D0B4F5500464124 /* SocialSharing-Bridging-Header.h */,
 				D62848291D1913D600E31A7B /* External */,
 				D654AF981CFEEC7C0012E938 /* SocialSharing */,
 				D60EF25A1D0165AF00F878C1 /* Example */,
@@ -198,14 +210,6 @@
 				D6873E101D093CB300D7CAAA /* InstagramManager */,
 				D613742E1D06B8540012CA74 /* FacebookManager */,
 				D61374301D06B8540012CA74 /* TwitterManager */,
-				D654AF991CFEEC7C0012E938 /* AppDelegate.swift */,
-				D654AFA51CFEEC7C0012E938 /* Info.plist */,
-				D61577281D0059EC0047207C /* Enum.swift */,
-				D654AF9D1CFEEC7C0012E938 /* Main.storyboard */,
-				D654AFA01CFEEC7C0012E938 /* Assets.xcassets */,
-				D654AFA21CFEEC7C0012E938 /* LaunchScreen.storyboard */,
-				D61577201D0038FB0047207C /* PersistentDataManager.swift */,
-				D61B2C891D0B4F5500464124 /* SocialSharing-Bridging-Header.h */,
 			);
 			path = SocialSharing;
 			sourceTree = "<group>";
@@ -213,6 +217,7 @@
 		D67184B71D0D47E00043C85B /* GoogleManager */ = {
 			isa = PBXGroup;
 			children = (
+				D66F68151D0CAB13005CF8EB /* GoogleService-Info.plist */,
 				D67184B81D0D48030043C85B /* GoogleViewController.swift */,
 			);
 			path = GoogleManager;
@@ -222,7 +227,7 @@
 			isa = PBXGroup;
 			children = (
 				D62848301D192C9800E31A7B /* TSGInstagramManager.swift */,
-				D6873E111D093D3900D7CAAA /* InstagramLogin.swift */,
+				D6873E111D093D3900D7CAAA /* InstagramLoginViewController.swift */,
 			);
 			path = InstagramManager;
 			sourceTree = "<group>";
@@ -369,14 +374,13 @@
 				D67184B91D0D48030043C85B /* GoogleViewController.swift in Sources */,
 				D61374331D06B8540012CA74 /* TSGTwitterManager.swift in Sources */,
 				D61577211D0038FB0047207C /* PersistentDataManager.swift in Sources */,
-				D6873E121D093D3900D7CAAA /* InstagramLogin.swift in Sources */,
+				D6873E121D093D3900D7CAAA /* InstagramLoginViewController.swift in Sources */,
 				D6195EFC1D09E93000293139 /* SocialFeatures-Extension(Instagram).swift in Sources */,
 				D613742C1D06B7F50012CA74 /* SocialFeatures.swift in Sources */,
 				D66CAB591D043D230010139B /* TwitterPostsViewController.swift in Sources */,
 				D614D2111D0AEBEC001FFD77 /* TSGLinkedinManager.swift in Sources */,
 				D613742B1D06B7F50012CA74 /* SocialFeatures-Extension(Twitter).swift in Sources */,
 				D62848311D192C9800E31A7B /* TSGInstagramManager.swift in Sources */,
-				D67184B61D0D36A90043C85B /* SocialFeatures-Extension(Google).swift in Sources */,
 				D613742A1D06B7F50012CA74 /* SocialFeatures-Extension(Facebook).swift in Sources */,
 				D61374321D06B8540012CA74 /* TSGFacebookManager.swift in Sources */,
 				D613742D1D06B7F50012CA74 /* SocialListViewController.swift in Sources */,
@@ -394,6 +398,7 @@
 				D654AF9E1CFEEC7C0012E938 /* Base */,
 			);
 			name = Main.storyboard;
+			path = ../SocialSharing;
 			sourceTree = "<group>";
 		};
 		D654AFA21CFEEC7C0012E938 /* LaunchScreen.storyboard */ = {
@@ -402,6 +407,7 @@
 				D654AFA31CFEEC7C0012E938 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = ../SocialSharing;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

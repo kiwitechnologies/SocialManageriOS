@@ -16,7 +16,13 @@ import Foundation
 import FBSDKLoginKit
 import FBSDKShareKit
 
+
 class TSGFacebookManager:NSObject, FBSDKSharingDelegate, FBSDKAppInviteDialogDelegate {
+    
+    var successBlock:(response:AnyObject)->()? = {_ in return}
+    var failureBlock:(response:AnyObject)->()? = {_ in return}
+    var cancelBlock:(response:AnyObject)->()? = {_ in return}
+    var invitationMade:(status:Bool)->() = {_ in return}
     
     internal class var sharedInstance:TSGFacebookManager{
         struct Static{
@@ -26,9 +32,9 @@ class TSGFacebookManager:NSObject, FBSDKSharingDelegate, FBSDKAppInviteDialogDel
         dispatch_once(&Static.onceToken) {
             Static.instance = TSGFacebookManager()
         }
-    return Static.instance!
+        return Static.instance!
     }
-
+    
     /*
      *	@functionName	: loginWithPersmissions
      *	@parameters		: permissions : It would have the permissions array
@@ -37,12 +43,12 @@ class TSGFacebookManager:NSObject, FBSDKSharingDelegate, FBSDKAppInviteDialogDel
      *                  : failure : Its a failure block
      *                  :
      * */
-
+    
     func loginWithPersmissions( permissions:NSArray,success:() -> Void,cancelled:()-> Void,failure:(NSError) -> Void)
     {
         var loginManager:FBSDKLoginManager!
         loginManager = FBSDKLoginManager()
-
+        
         loginManager.loginBehavior = FBSDKLoginBehavior.SystemAccount
         
         loginManager.logInWithReadPermissions(permissions as [AnyObject], fromViewController: nil, handler: { (result, error) -> Void in
@@ -67,21 +73,21 @@ class TSGFacebookManager:NSObject, FBSDKSharingDelegate, FBSDKAppInviteDialogDel
      *                  : failure : Its a failure block
      *                  :
      * */
-
+    
     func getUserData( fields:[NSObject : AnyObject],success:(AnyObject) -> Void,failure:(NSError) -> Void)
     {
         let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me", parameters: fields)
-            graphRequest.startWithCompletionHandler({ (connection, result, error) -> Void in
+        graphRequest.startWithCompletionHandler({ (connection, result, error) -> Void in
             if ((error) != nil)
             {
                 print(error)
-
+                
                 failure(error)
             }
             else
             {
                 print(result)
-
+                
                 success(result)
             }
         })
@@ -91,16 +97,16 @@ class TSGFacebookManager:NSObject, FBSDKSharingDelegate, FBSDKAppInviteDialogDel
      *	@functionName	: postTextMessage
      *	@parameters		: viewController : It needs viewController on which Dialog has to show
      *                  : contentTitle : It requires contentTitle
-
+     
      * */
     
     func postTextMessage(viewController:UIViewController, contentTitle:String){
-                
+        
         if FBSDKAccessToken.currentAccessToken() != nil {
             
             
             let shareLinkContent = FBSDKShareLinkContent()
-          //  shareLinkContent.contentURL = NSURL(string: "https://developers.facebook.com")
+            //  shareLinkContent.contentURL = NSURL(string: "https://developers.facebook.com")
             shareLinkContent.contentTitle = contentTitle
             
             
@@ -114,18 +120,20 @@ class TSGFacebookManager:NSObject, FBSDKSharingDelegate, FBSDKAppInviteDialogDel
      *                  : caption : It requires caption
      *                  : imageName : Its requires imageName
      
-
+     
      * */
     
-    func postTextWithImageInBackground(viewController:UIViewController, caption:String, imageName:String){
-
+    func postTextWithImageInBackground(viewController:UIViewController, caption:String, imageName:String, successBlock:(response:AnyObject)->(), failureBlock:(error:AnyObject)->(), cancelBlock:(message:AnyObject)->()){
+        
         let sharePhoto = FBSDKSharePhoto()
         sharePhoto.caption = caption
         sharePhoto.image = UIImage(named: imageName)
         
         let content = FBSDKSharePhotoContent()
         content.photos = [sharePhoto]
-        
+        self.successBlock = successBlock
+        self.failureBlock  = failureBlock
+        self.cancelBlock = cancelBlock
         FBSDKShareAPI.shareWithContent(content, delegate: self)
         
         //  FBSDKMessageDialog.showWithContent(content, delegate: nil)
@@ -137,10 +145,11 @@ class TSGFacebookManager:NSObject, FBSDKSharingDelegate, FBSDKAppInviteDialogDel
      *	@parameters		: viewController : It needs viewController on which Dialog has to show
      *                  : caption : It requires caption
      *                  : imageName : Its requires imageName
-
+     
      * */
-
-    func postImageAndText(viewController:UIViewController, caption:String, imageName:String){
+    
+    func postImageAndText(viewController:UIViewController, caption:String, imageName:String, successBlock:(response:AnyObject)->()?,
+                          failureBlock:(response:AnyObject)->()?, cancelBlock:(response:AnyObject)->()?){
         
         let sharePhoto = FBSDKSharePhoto()
         sharePhoto.caption = caption
@@ -148,6 +157,9 @@ class TSGFacebookManager:NSObject, FBSDKSharingDelegate, FBSDKAppInviteDialogDel
         
         let content = FBSDKSharePhotoContent()
         content.photos = [sharePhoto]
+        self.successBlock = successBlock
+        self.failureBlock = failureBlock
+        self.cancelBlock = cancelBlock
         
         FBSDKShareDialog.showFromViewController(viewController, withContent: content, delegate: self)
     }
@@ -157,15 +169,17 @@ class TSGFacebookManager:NSObject, FBSDKSharingDelegate, FBSDKAppInviteDialogDel
      *	@parameters		: viewController : It needs viewController on which Dialog has to show
      *                  : contentURL : It requires content URL
      *                  : contentTitle : Its requires contentTitle
-
+     
      * */
     
-    func postLink(viewController:UIViewController, contentURL:String, contentTitle:String){
+    func postLink(viewController:UIViewController, contentURL:String, contentTitle:String, successBlock:(response:AnyObject)->(), failureBlock:(failure:AnyObject)->(), cancel:(msg:AnyObject)->()){
         
         let shareLinkContent = FBSDKShareLinkContent()
         shareLinkContent.contentURL = NSURL(string: contentURL)
         shareLinkContent.contentTitle = contentTitle
-        
+        self.successBlock = successBlock
+        self.failureBlock = failureBlock
+        self.cancelBlock = cancel
         FBSDKShareDialog.showFromViewController(viewController, withContent: shareLinkContent, delegate: self)
     }
     
@@ -173,31 +187,35 @@ class TSGFacebookManager:NSObject, FBSDKSharingDelegate, FBSDKAppInviteDialogDel
      *	@functionName	: postLinkInBackground
      *	@parameters		: contentURL : It requires content URL
      *                  : contentTitle : Its requires contentTitle
-
+     
      * */
-    func postLinkInBackground(viewController:UIViewController, contentURL:String, contentTitle:String){
+    func postLinkInBackground(viewController:UIViewController, contentURL:String, contentTitle:String, successBlock:(response:AnyObject)->(),
+                              failureBlock:(failure:AnyObject)->(), cancel:(msg:AnyObject)->()){
         
         let shareLinkContent = FBSDKShareLinkContent()
         shareLinkContent.contentURL = NSURL(string: contentURL)
         shareLinkContent.contentTitle = contentTitle
+        self.successBlock = successBlock
+        self.failureBlock = failureBlock
+        self.cancelBlock = cancel
         
         FBSDKShareAPI.shareWithContent(shareLinkContent, delegate: nil)
         
     }
-
+    
     /*
      *	@functionName	: facebookLogOut
      * */
-    func facebookLogOut(){
-    
-     if FBSDKAccessToken.currentAccessToken() != nil {
-        FBSDKAccessToken.setCurrentAccessToken(nil)
-        FBSDKProfile.setCurrentProfile(nil)
+    func facebookLogOut(status:(Bool)->()){
         
-        let manager = FBSDKLoginManager()
-        manager.logOut()
-        print("LogOut successfully")
-        
+        if FBSDKAccessToken.currentAccessToken() != nil {
+            FBSDKAccessToken.setCurrentAccessToken(nil)
+            FBSDKProfile.setCurrentProfile(nil)
+            let manager = FBSDKLoginManager()
+            manager.logOut()
+            print("LogOut successfully")
+            status(true)
+            
         }
     }
     
@@ -206,15 +224,20 @@ class TSGFacebookManager:NSObject, FBSDKSharingDelegate, FBSDKAppInviteDialogDel
      
      * */
     
-    func getFriendList(){
+    func getFriendList(successBlock:(AnyObject)->(), failureBlock:(AnyObject)->()){
         
         if FBSDKAccessToken.currentAccessToken().hasGranted("user_friends") {
             
-        let postText:FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me/friends", parameters:nil, HTTPMethod: "GET")
-            postText.startWithCompletionHandler({ (fb, any, error) in
-                print(fb)
-                print(any)
-
+            self.successBlock = successBlock
+            self.failureBlock = failureBlock
+            
+            let postText:FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me/friends", parameters:nil, HTTPMethod: "GET")
+            
+            postText.startWithCompletionHandler({ (requestConnection, object, error) in
+                
+                self.successBlock(response: object)
+                self.failureBlock(response: error)
+                
             })
         }
     }
@@ -225,11 +248,15 @@ class TSGFacebookManager:NSObject, FBSDKSharingDelegate, FBSDKAppInviteDialogDel
      *                  : previewImageURL : Its requires Image url string
      * */
     
-    func appInvite(viewController:UIViewController, appLinkURL:String, previewImageURL:String){
+    func appInvite(viewController:UIViewController, appLinkURL:String, previewImageURL:String, successBlock:(AnyObject)->(), failureBlock:(AnyObject)->()){
         
         let inviteDialog:FBSDKAppInviteDialog = FBSDKAppInviteDialog()
         
+        self.successBlock = successBlock
+        self.failureBlock = failureBlock
+        
         if(inviteDialog.canShow()){
+            
             let appLinkUrl:NSURL = NSURL(string: appLinkURL)!
             
             let previewImageUrl:NSURL = NSURL(string: previewImageURL)!
@@ -241,7 +268,7 @@ class TSGFacebookManager:NSObject, FBSDKSharingDelegate, FBSDKAppInviteDialogDel
             inviteDialog.delegate = self
             inviteDialog.show()
         }
-     }
+    }
     
 }
 
@@ -249,28 +276,29 @@ class TSGFacebookManager:NSObject, FBSDKSharingDelegate, FBSDKAppInviteDialogDel
 extension TSGFacebookManager {
     
     func sharer(sharer: FBSDKSharing!, didCompleteWithResults results: [NSObject: AnyObject]) {
-        print(results)
+        successBlock(response: results)
     }
     
     func sharer(sharer: FBSDKSharing!, didFailWithError error: NSError!) {
-        print("sharer NSError")
-        print(error.description)
+        failureBlock(response: error)
     }
     
     func sharerDidCancel(sharer: FBSDKSharing!) {
-        print("sharerDidCancel")
+        cancelBlock(response: "Request Cancelled")
     }
-
+    
 }
 
 //MARK: FBSDKAppInviteDialogDelegate
 extension TSGFacebookManager {
     
     func appInviteDialog(appInviteDialog: FBSDKAppInviteDialog!, didCompleteWithResults results: [NSObject : AnyObject]!) {
-        print("invitation made")
+        invitationMade(status: true)
     }
+    
     func appInviteDialog(appInviteDialog: FBSDKAppInviteDialog!, didFailWithError error: NSError!) {
-        print("error made")
+        invitationMade(status: false)
+        
     }
-
+    
 }

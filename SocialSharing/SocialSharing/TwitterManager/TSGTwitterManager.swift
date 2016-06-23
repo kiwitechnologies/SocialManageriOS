@@ -16,49 +16,35 @@ class TSGTwitterManager {
      * eg. Facebook login, Invite Friends, Get User Data, Post etc
      * It helps to Reduce the line of code in entire application to integrate facbook for using mention features.
      * —————————————————————————————————————————————-----------------------------------------------*/
-
     
     
-   class func twitterLogin(viewController:UIViewController){
+    
+    class func twitterLogin(success:(session:AnyObject)->(), failure:(error:AnyObject)->()){
         
         Twitter.sharedInstance().logInWithCompletion { session, error in
             if (session != nil) {
-                print("signed in as \(session!.userName)")
-                
-                let alert = UIAlertController(title: "Log-in",
-                    message: "User \(session?.userName) has logged-in successfully",
-                    preferredStyle: UIAlertControllerStyle.Alert
-                )
-                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
-                viewController.presentViewController(alert, animated: true, completion: nil)
+                success(session: session!)
             } else {
-                print("error: \(error!.localizedDescription)");
-                
-                let alert = UIAlertController(title: "Log-in",
-                    message: "User \(session?.userName) has logged Out successfully",
-                    preferredStyle: UIAlertControllerStyle.Alert
-                )
-                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
-                viewController.presentViewController(alert, animated: true, completion: nil)
+                failure(error: error!)
             }
         }
         
     }
-
+    
     /*
      *	@functionName	: twitterLogOut
      *	@parameters		: viewController : It would be the viewController on which Alert has to show for success and failure
      * */
     
     
-   class func twitterLogOut(viewController:UIViewController){
+    class func twitterLogOut(viewController:UIViewController, status:(succeed:Bool)->()){
         let client = TWTRAPIClient.clientWithCurrentUser()
         print(client.userID)
         
         let userID = client.userID
         if client.userID != nil {
             Twitter.sharedInstance().sessionStore.logOutUserID(client.userID!)
-            
+            status(succeed: true)
             let alert = UIAlertController(title: "Log Out",
                                           message: "User \(userID) has logged Out successfully",
                                           preferredStyle: UIAlertControllerStyle.Alert
@@ -73,15 +59,15 @@ class TSGTwitterManager {
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
             viewController.presentViewController(alert, animated: true, completion: nil)
         }
-
+        
     }
     
     /*
      *	@functionName	: publishTweet
      *	@parameters		: viewController : It would be the viewController on which Alert has to show for success and failure
-      * */
+     * */
     
-    class func publishTweet(viewController:UIViewController, composeText:String, imageName:String?){
+    class func publishTweet(viewController:UIViewController, composeText:String, imageName:String?, success:(AnyObject)->(), failure:(AnyObject)->()){
         let composer = TWTRComposer()
         
         composer.setText(composeText)
@@ -90,19 +76,19 @@ class TSGTwitterManager {
         // Called from a UIViewController
         composer.showFromViewController(viewController) { result in
             if (result == TWTRComposerResult.Cancelled) {
-                print("Tweet composition cancelled")
+                failure("Error")
             }
             else {
-                print("Sending tweet!")
+                success("Sending Tweet!")
             }
         }
-
+        
     }
     
     /*
      *	@functionName	: getTwitterUserProfile
      * */
-    class func getUserProfileWithScreenName(screenName:String){
+    class func getUserProfileWithScreenName(screenName:String, success:(response:AnyObject?, data:AnyObject?)->(), error:(error:AnyObject)->()){
         
         let client = TWTRAPIClient.clientWithCurrentUser()
         let request = client.URLRequestWithMethod("GET",
@@ -112,7 +98,14 @@ class TSGTwitterManager {
         
         client.sendTwitterRequest(request) { response, data, connectionError in
             print(response, data)
-           
+            if response != nil && data != nil {
+                success(response: response, data: data)
+ 
+            }
+            if connectionError != nil {
+                error(error: connectionError!)
+ 
+            }
         }
         
     }

@@ -11,6 +11,8 @@ import TSGServiceClient
 
 class TSGInstagramManager:NSObject {
     
+    var success:(status:Bool)->()? = {_ in return}
+    
     internal class var sharedInstance:TSGInstagramManager{
         struct Static{
             static var onceToken: dispatch_once_t = 0
@@ -22,15 +24,22 @@ class TSGInstagramManager:NSObject {
         return Static.instance!
     }
     
-    func instagramPostImage(view:UIView){
+    
+    /*
+     *	@functionName	: instagramPostImage
+     *  description: This method is used to post image in Instagram app.
+     * */
+    
+    func instagramPostImage(view:UIView,image:UIImage, success:(status:Bool)->()){
         let url = NSURL(string: "instagram://")
+        
+        self.success = success
         
         if UIApplication.sharedApplication().canOpenURL(url!) {
             NSDataWritingOptions.AtomicWrite
             
-            let image = UIImage(named: "IMG_4301.jpg", inBundle: NSBundle(forClass: self.dynamicType), compatibleWithTraitCollection: nil)
-            
-            let imageData = UIImageJPEGRepresentation(image!, 1.0)
+            let image = image
+            let imageData = UIImageJPEGRepresentation(image, 1.0)
             
             
             let temporaryDirectory = NSTemporaryDirectory() as NSString
@@ -52,43 +61,59 @@ class TSGInstagramManager:NSObject {
             )
             
         }
-        
     }
+    
+    /*
+     *	@functionName	: instagramUserProfile
+     *  description: This method is used to get UserProfile
+     * */
     
     func instagramUserProfile(successBlock:(AnyObject)->(), failureBlock:(AnyObject)->()){
         
-        let token = NSUserDefaults().valueForKey("Instagram_Token")
-        let queryParam = ["access_token":token as! String]
-        
-        let tempDict:NSMutableDictionary = NSMutableDictionary()
-        tempDict.setValue("3314177362", forKey: "user-id")
-        
-        ServiceManager.setBaseURL("https://api.instagram.com/v1/")
-        ServiceManager.hitRequestForAPI("users/self/", withQueryParam: queryParam, typeOfRequest: .GET, typeOFResponse: .JSON, success: { (object) in
-            print(object)
+        if let token = NSUserDefaults().valueForKey("Instagram_Token") {
+            
+            let queryParam = ["access_token":token as! String]
+            ServiceManager.setBaseURL("https://api.instagram.com/v1/")
+            ServiceManager.hitRequestForAPI("users/self/", withQueryParam: queryParam, typeOfRequest: .GET, typeOFResponse: .JSON, success: { (object) in
+                print(object)
             }) { (error) in
                 print(error)
+            }
+        }else{
+            failureBlock("Token Not found")
+ 
         }
-        
     }
     
-    func instagramFriendProfile(successBlock:(AnyObject)->(),failureBlock:(AnyObject)->()){
-        let token = NSUserDefaults().valueForKey("Instagram_Token")
-        let queryParam = ["access_token":token as! String]
+    /*
+     *	@functionName	: instagramUserProfile
+     *  description: This method is used to get friendProfile based on ID
+     * */
+    func instagramFriendProfile(userID:String, successBlock:(AnyObject)->(),failureBlock:(AnyObject)->()){
         
-        let tempDict:NSMutableDictionary = NSMutableDictionary()
-        tempDict.setValue("3314177362", forKey: "user-id")
-        
-        ServiceManager.setBaseURL("https://api.instagram.com/v1/")
-        ServiceManager.hitRequestForAPI("users/3314177362", withQueryParam: queryParam, typeOfRequest: .GET, typeOFResponse: .JSON, success: { (object) in
-            print(object)
+        if let token = NSUserDefaults().valueForKey("Instagram_Token") {
+            let queryParam = ["access_token":token as! String]
+            
+            ServiceManager.setBaseURL("https://api.instagram.com/v1/")
+            ServiceManager.hitRequestForAPI("users/\(userID)", withQueryParam: queryParam, typeOfRequest: .GET, typeOFResponse: .JSON, success: { (object) in
+                print(object)
             }) { (error) in
                 print(error)
+            }
         }
-        
+        else {
+            failureBlock("Token Not found")
+  
+        }
     }
     
-    func instagramLogOut(){
+    /*
+     *	@functionName	: instagramLogOut
+     *  description: This method is used to logOut from Instagram
+     * */
+    
+    func instagramLogOut(success:(status:Bool)->()){
+        
         let cookieJar : NSHTTPCookieStorage = NSHTTPCookieStorage.sharedHTTPCookieStorage()
         for cookie in cookieJar.cookies! as [NSHTTPCookie]{
             NSLog("cookie.domain = %@", cookie.domain)
@@ -99,26 +124,18 @@ class TSGInstagramManager:NSObject {
                 cookieJar.deleteCookie(cookie)
             }
         }
-    }
-    
-    func instagramPublishMedia(successBlock:(AnyObject)->(),failureBlock:(AnyObject)->()){
-        let token = NSUserDefaults().valueForKey("Instagram_Token")
-        let queryParam = ["access_token":token as! String]
+        NSUserDefaults().removeObjectForKey("Instagram_Token")
+        NSUserDefaults.standardUserDefaults().synchronize()
         
-        ServiceManager.setBaseURL("https://api.instagram.com/v1/")
-        ServiceManager.hitRequestForAPI("/users/self/media/recent/", withQueryParam: queryParam, typeOfRequest: .GET, typeOFResponse: .JSON, success: { (object) in
-            print(object)
-            }) { (error) in
-                print(error)
-        }
+        success(status: true)
     }
 }
 
 extension TSGInstagramManager: UIDocumentInteractionControllerDelegate{
     func documentInteractionController(controller: UIDocumentInteractionController, didEndSendingToApplication application: String?) {
-        
+        success(status: true)
     }
     func documentInteractionControllerDidDismissOpenInMenu(controller: UIDocumentInteractionController) {
-        
+        success(status: false)
     }
 }

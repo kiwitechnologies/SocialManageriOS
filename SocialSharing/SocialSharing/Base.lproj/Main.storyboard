@@ -82,7 +82,7 @@
                                     <constraint firstAttribute="width" secondItem="L3k-it-5oC" secondAttribute="height" multiplier="7:13" id="212-uX-sew"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -124,10 +124,10 @@
             </objects>
             <point key="canvasLocation" x="574" y="-234"/>
         </scene>
-        <!--Instagram View Controller-->
+        <!--Instagram Login View Controller-->
         <scene sceneID="NmA-Db-PS4">
             <objects>
-                <viewController storyboardIdentifier="InstagramView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="iG1-O4-WZE" customClass="InstagramViewController" customModule="SocialSharing" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="InstagramLoginViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="iG1-O4-WZE" customClass="InstagramLoginViewController" customModule="SocialSharing" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Cp9-IY-tUR"/>
                         <viewControllerLayoutGuide type="bottom" id="wvm-63-2U4"/>
@@ -241,12 +241,26 @@
                                     <constraint firstAttribute="height" constant="34" id="lz6-zM-OOe"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CNY-eh-KpD">
+                                <rect key="frame" x="85" y="123" width="149" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Wwp-Uf-8Fv"/>
+                                    <constraint firstAttribute="width" constant="149" id="ggd-YY-kyZ"/>
+                                </constraints>
+                                <state key="normal" title="LogOut"/>
+                                <connections>
+                                    <action selector="googleLogOut:" destination="GOe-4G-TUM" eventType="touchUpInside" id="h20-t5-RK8"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="CNY-eh-KpD" firstAttribute="top" secondItem="GDS-tm-wYL" secondAttribute="bottom" constant="42" id="166-RS-el9"/>
+                            <constraint firstItem="CNY-eh-KpD" firstAttribute="leading" secondItem="ZcB-bw-det" secondAttribute="leading" constant="85" id="1yR-kt-Ssw"/>
                             <constraint firstAttribute="trailing" secondItem="GDS-tm-wYL" secondAttribute="trailing" constant="86" id="Bdr-eW-ElO"/>
                             <constraint firstItem="GDS-tm-wYL" firstAttribute="leading" secondItem="ZcB-bw-det" secondAttribute="leading" constant="85" id="Z2N-nc-vx7"/>
                             <constraint firstItem="GDS-tm-wYL" firstAttribute="top" secondItem="aVC-5L-zXz" secondAttribute="bottom" constant="27" id="eY8-uO-Gp7"/>
+                            <constraint firstAttribute="trailing" secondItem="CNY-eh-KpD" secondAttribute="trailing" constant="86" id="n38-cG-ZE7"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
