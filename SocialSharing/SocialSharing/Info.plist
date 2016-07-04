@@ -7,7 +7,7 @@
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.tsg.SocialSharing</string>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
@@ -50,12 +50,12 @@
 			</dict>
 		</array>
 	</dict>
-	<key>LIAppId</key>
-	<string>4940551</string>
 	<key>FacebookAppID</key>
 	<string>541366669384344</string>
 	<key>FacebookDisplayName</key>
 	<string>TSGSocialManager</string>
+	<key>LIAppId</key>
+	<string>4940551</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>fbapi</string>
@@ -75,11 +75,6 @@
 		<true/>
 		<key>NSExceptionDomains</key>
 		<dict>
-			<key>twitter.com</key>
-			<dict>
-				<key>NSExceptionRequiresForwardSecrecy</key>
-				<false/>
-			</dict>
 			<key>facebook.com</key>
 			<dict>
 				<key>NSExceptionRequiresForwardSecrecy</key>
@@ -98,10 +93,15 @@
 			<dict>
 				<key>NSExceptionAllowsInsecureHTTPLoads</key>
 				<true/>
-				<key>NSIncludesSubdomains</key>
-				<true/>
 				<key>NSExceptionRequiresForwardSecrecy</key>
 				<true/>
+				<key>NSIncludesSubdomains</key>
+				<true/>
+			</dict>
+			<key>twitter.com</key>
+			<dict>
+				<key>NSExceptionRequiresForwardSecrecy</key>
+				<false/>
 			</dict>
 		</dict>
 	</dict>

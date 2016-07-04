@@ -44,7 +44,7 @@ class TSGFacebookManager:NSObject, FBSDKSharingDelegate, FBSDKAppInviteDialogDel
      *                  :
      * */
     
-    func loginWithPersmissions( permissions:NSArray,success:() -> Void,cancelled:()-> Void,failure:(NSError) -> Void)
+    func loginWithPersmissions( permissions:NSArray,success:(token:String) -> Void,cancelled:()-> Void,failure:(NSError) -> Void)
     {
         var loginManager:FBSDKLoginManager!
         loginManager = FBSDKLoginManager()
@@ -61,7 +61,7 @@ class TSGFacebookManager:NSObject, FBSDKSharingDelegate, FBSDKAppInviteDialogDel
             }
             else
             {
-                success()
+                success(token: FBSDKAccessToken.currentAccessToken().tokenString)
             }
         })
     }
@@ -125,19 +125,27 @@ class TSGFacebookManager:NSObject, FBSDKSharingDelegate, FBSDKAppInviteDialogDel
     
     func postTextWithImageInBackground(viewController:UIViewController, caption:String, imageName:String, successBlock:(response:AnyObject)->(), failureBlock:(error:AnyObject)->(), cancelBlock:(message:AnyObject)->()){
         
-        let sharePhoto = FBSDKSharePhoto()
-        sharePhoto.caption = caption
-        sharePhoto.image = UIImage(named: imageName)
+        if FBSDKAccessToken.currentAccessToken() != nil {
+            if FBSDKAccessToken.currentAccessToken().hasGranted("publish_actions") {
+                let sharePhoto = FBSDKSharePhoto()
+                sharePhoto.caption = caption
+                sharePhoto.image = UIImage(named: imageName)
+                
+                let content = FBSDKSharePhotoContent()
+                content.photos = [sharePhoto]
+                self.successBlock = successBlock
+                self.failureBlock  = failureBlock
+                self.cancelBlock = cancelBlock
+                FBSDKShareAPI.shareWithContent(content, delegate: self)
+            } else{
+                let loginManager = FBSDKLoginManager()
+                loginManager.logInWithPublishPermissions(["publish_actions"], fromViewController: viewController, handler: { (result, error) in
+                    print(result)
+                })
+                
+            }
+        }
         
-        let content = FBSDKSharePhotoContent()
-        content.photos = [sharePhoto]
-        self.successBlock = successBlock
-        self.failureBlock  = failureBlock
-        self.cancelBlock = cancelBlock
-        FBSDKShareAPI.shareWithContent(content, delegate: self)
-        
-        //  FBSDKMessageDialog.showWithContent(content, delegate: nil)
-        // FBSDKShareDialog.showFromViewController(viewController, withContent: content, delegate: nil)
     }
     
     /*
@@ -174,6 +182,7 @@ class TSGFacebookManager:NSObject, FBSDKSharingDelegate, FBSDKAppInviteDialogDel
     
     func postLink(viewController:UIViewController, contentURL:String, contentTitle:String, successBlock:(response:AnyObject)->(), failureBlock:(failure:AnyObject)->(), cancel:(msg:AnyObject)->()){
         
+        
         let shareLinkContent = FBSDKShareLinkContent()
         shareLinkContent.contentURL = NSURL(string: contentURL)
         shareLinkContent.contentTitle = contentTitle
@@ -192,14 +201,24 @@ class TSGFacebookManager:NSObject, FBSDKSharingDelegate, FBSDKAppInviteDialogDel
     func postLinkInBackground(viewController:UIViewController, contentURL:String, contentTitle:String, successBlock:(response:AnyObject)->(),
                               failureBlock:(failure:AnyObject)->(), cancel:(msg:AnyObject)->()){
         
-        let shareLinkContent = FBSDKShareLinkContent()
-        shareLinkContent.contentURL = NSURL(string: contentURL)
-        shareLinkContent.contentTitle = contentTitle
-        self.successBlock = successBlock
-        self.failureBlock = failureBlock
-        self.cancelBlock = cancel
-        
-        FBSDKShareAPI.shareWithContent(shareLinkContent, delegate: nil)
+        if FBSDKAccessToken.currentAccessToken() != nil {
+            if FBSDKAccessToken.currentAccessToken().hasGranted("publish_actions") {
+                let shareLinkContent = FBSDKShareLinkContent()
+                shareLinkContent.contentURL = NSURL(string: contentURL)
+                shareLinkContent.contentTitle = contentTitle
+                self.successBlock = successBlock
+                self.failureBlock = failureBlock
+                self.cancelBlock = cancel
+                
+                FBSDKShareAPI.shareWithContent(shareLinkContent, delegate: nil)
+            }
+            else {
+                let loginManager = FBSDKLoginManager()
+                loginManager.logInWithPublishPermissions(["publish_actions"], fromViewController: viewController, handler: { (result, error) in
+                    print(result)
+                })
+            }
+        }
         
     }
     
@@ -232,7 +251,6 @@ class TSGFacebookManager:NSObject, FBSDKSharingDelegate, FBSDKAppInviteDialogDel
             self.failureBlock = failureBlock
             
             let postText:FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me/friends", parameters:nil, HTTPMethod: "GET")
-            
             postText.startWithCompletionHandler({ (requestConnection, object, error) in
                 
                 self.successBlock(response: object)

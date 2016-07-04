@@ -55,8 +55,8 @@ extension SocialFeatures {
         
         let permissionArray = ["public_profile","email","user_friends"]
         
-        TSGFacebookManager.sharedInstance.loginWithPersmissions(permissionArray, success: {
-            print("Facebook Login Successful")
+        TSGFacebookManager.sharedInstance.loginWithPersmissions(permissionArray, success: { token in
+            print("Facebook Login Successful. Token :\(token)")
             }, cancelled: {
                 print("Facebook Login Cancelled")
                 
